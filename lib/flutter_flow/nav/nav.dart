@@ -154,15 +154,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => CadastrarEnderecoWidget(),
             ),
             FFRoute(
-              name: 'editarEndereco',
-              path: 'editarEndereco',
-              requireAuth: true,
-              builder: (context, params) => EditarEnderecoWidget(
-                detalheEndereco: params.getParam('detalheEndereco',
-                    ParamType.DocumentReference, false, ['endereco']),
-              ),
-            ),
-            FFRoute(
               name: 'selecionarEnderecoEntrega',
               path: 'selecionarEnderecoEntrega',
               requireAuth: true,
@@ -215,6 +206,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'meusEnderecos',
               requireAuth: true,
               builder: (context, params) => MeusEnderecosWidget(),
+            ),
+            FFRoute(
+              name: 'editarEndereco',
+              path: 'editarEndereco',
+              requireAuth: true,
+              builder: (context, params) => EditarEnderecoWidget(
+                detalheEndereco: params.getParam('detalheEndereco',
+                    ParamType.DocumentReference, false, ['endereco']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

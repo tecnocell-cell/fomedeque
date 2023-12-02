@@ -264,7 +264,7 @@ class _MeusEnderecosWidgetState extends State<MeusEnderecosWidget> {
                                                     Colors.transparent,
                                                 onTap: () async {
                                                   context.pushNamed(
-                                                      'editarEndereco');
+                                                      'meusEnderecos');
                                                 },
                                                 child: Column(
                                                   mainAxisSize:

@@ -951,7 +951,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 16.0),
                       child: StreamBuilder<EnderecoRecord>(
                         stream: EnderecoRecord.getDocument(
                             widget.endereco!.reference),

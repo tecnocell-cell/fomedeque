@@ -12,8 +12,6 @@ export '/user/perfil/perfil_widget.dart' show PerfilWidget;
 export '/user/dados_user/dados_user_widget.dart' show DadosUserWidget;
 export '/pages/prontas/cadastrar_endereco/cadastrar_endereco_widget.dart'
     show CadastrarEnderecoWidget;
-export '/pages/editar_endereco/editar_endereco_widget.dart'
-    show EditarEnderecoWidget;
 export '/pages/selecionar_endereco_entrega/selecionar_endereco_entrega_widget.dart'
     show SelecionarEnderecoEntregaWidget;
 export '/pages/prontas/pagamento/pagamento_widget.dart' show PagamentoWidget;
@@ -23,5 +21,7 @@ export '/pages/pesquisa/pesquisa_widget.dart' show PesquisaWidget;
 export '/user/pedidos/pedidos_widget.dart' show PedidosWidget;
 export '/pages/prontas/detalhes_produto/detalhes_produto_widget.dart'
     show DetalhesProdutoWidget;
-export '/user/meus_enderecos/meus_enderecos_widget.dart'
+export '/pages/prontas/meus_enderecos/meus_enderecos_widget.dart'
     show MeusEnderecosWidget;
+export '/pages/prontas/editar_endereco/editar_endereco_widget.dart'
+    show EditarEnderecoWidget;
