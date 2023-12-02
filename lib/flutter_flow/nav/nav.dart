@@ -148,12 +148,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => DadosUserWidget(),
             ),
             FFRoute(
-              name: 'meusEnderecos',
-              path: 'meusEnderecos',
-              requireAuth: true,
-              builder: (context, params) => MeusEnderecosWidget(),
-            ),
-            FFRoute(
               name: 'cadastrarEndereco',
               path: 'cadastrarEndereco',
               requireAuth: true,
@@ -215,6 +209,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 parametroProduto: params.getParam('parametroProduto',
                     ParamType.DocumentReference, false, ['produto']),
               ),
+            ),
+            FFRoute(
+              name: 'meusEnderecos',
+              path: 'meusEnderecos',
+              requireAuth: true,
+              builder: (context, params) => MeusEnderecosWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

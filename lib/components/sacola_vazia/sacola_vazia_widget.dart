@@ -49,7 +49,7 @@ class _SacolaVaziaWidgetState extends State<SacolaVaziaWidget> {
       children: [
         Icon(
           Icons.fastfood_outlined,
-          color: Color(0xFF8B97A2),
+          color: FlutterFlowTheme.of(context).primary,
           size: 90.0,
         ),
         Padding(
@@ -104,7 +104,7 @@ class _SacolaVaziaWidgetState extends State<SacolaVaziaWidget> {
               height: 50.0,
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
               iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-              color: FlutterFlowTheme.of(context).alternate,
+              color: FlutterFlowTheme.of(context).primary,
               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                     fontFamily: 'Lexend Deca',
                     color: Colors.white,

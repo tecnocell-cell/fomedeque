@@ -160,15 +160,15 @@ class _AtualizarItemWidgetState extends State<AtualizarItemWidget> {
                         child: FlutterFlowCountController(
                           decrementIconBuilder: (enabled) => FaIcon(
                             FontAwesomeIcons.minus,
-                            color:
-                                enabled ? Color(0xDD404040) : Color(0xFFEEEEEE),
+                            color: enabled
+                                ? FlutterFlowTheme.of(context).tertiary
+                                : Color(0xFFEEEEEE),
                             size: 20.0,
                           ),
                           incrementIconBuilder: (enabled) => FaIcon(
                             FontAwesomeIcons.plus,
-                            color: enabled
-                                ? FlutterFlowTheme.of(context).alternate
-                                : Color(0xFFEEEEEE),
+                            color:
+                                enabled ? Color(0xFF298000) : Color(0xFFEEEEEE),
                             size: 20.0,
                           ),
                           countBuilder: (count) => Text(
@@ -242,7 +242,7 @@ class _AtualizarItemWidgetState extends State<AtualizarItemWidget> {
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0x8A3A3A3A),
+                            color: Color(0xFF298000),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -272,7 +272,7 @@ class _AtualizarItemWidgetState extends State<AtualizarItemWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).alternate,
+                      color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Open Sans',
