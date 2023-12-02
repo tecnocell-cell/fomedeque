@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419962254076",
+    "project_id": "fomedeque-d4480",
+    "storage_bucket": "fomedeque-d4480.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419962254076:android:7acfb68257dfbe86a2dd79",
+        "android_client_info": {
+          "package_name": "com.flutterflow.delivery"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3_yohLnaKHXJDDes_vK8mpEl44IgIg4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

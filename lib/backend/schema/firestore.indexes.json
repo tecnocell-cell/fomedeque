@@ -1,0 +1,18 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "venda",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "usuario",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dataVenda",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
+}
