@@ -108,7 +108,7 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  context.pushNamed('selecionarEnderecoEntrega');
+                  context.safePop();
                 },
               ),
               title: Text(

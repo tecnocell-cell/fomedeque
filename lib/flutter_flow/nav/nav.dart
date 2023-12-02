@@ -99,11 +99,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => TelaInicialWidget(),
             ),
             FFRoute(
-              name: 'Cadastro',
-              path: 'cadastro',
-              builder: (context, params) => CadastroWidget(),
-            ),
-            FFRoute(
               name: 'Login',
               path: 'login',
               builder: (context, params) => LoginWidget(),
@@ -134,14 +129,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : SacolaWidget(),
             ),
             FFRoute(
-              name: 'perfil',
-              path: 'perfil',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'perfil')
-                  : PerfilWidget(),
-            ),
-            FFRoute(
               name: 'dadosUser',
               path: 'dadosUser',
               requireAuth: true,
@@ -152,12 +139,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'cadastrarEndereco',
               requireAuth: true,
               builder: (context, params) => CadastrarEnderecoWidget(),
-            ),
-            FFRoute(
-              name: 'selecionarEnderecoEntrega',
-              path: 'selecionarEnderecoEntrega',
-              requireAuth: true,
-              builder: (context, params) => SelecionarEnderecoEntregaWidget(),
             ),
             FFRoute(
               name: 'pagamento',
@@ -215,6 +196,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 detalheEndereco: params.getParam('detalheEndereco',
                     ParamType.DocumentReference, false, ['endereco']),
               ),
+            ),
+            FFRoute(
+              name: 'config',
+              path: 'config',
+              requireAuth: true,
+              builder: (context, params) => params.isEmpty
+                  ? NavBarPage(initialPage: 'config')
+                  : ConfigWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

@@ -136,10 +136,10 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Restaurantes': RestaurantesWidget(),
-      'pesquisa': PesquisaWidget(),
       'sacola': SacolaWidget(),
+      'pesquisa': PesquisaWidget(),
       'pedidos': PedidosWidget(),
-      'perfil': PerfilWidget(),
+      'config': ConfigWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -169,15 +169,15 @@ class _NavBarPageState extends State<NavBarPage> {
             iconSize: 24.0,
           ),
           GButton(
-            icon: Icons.search_sharp,
-            text: 'Pesquisar',
-            iconSize: 20.0,
-          ),
-          GButton(
             icon: Icons.local_mall_outlined,
             text: 'Sacola',
             iconSize: 24.0,
             backgroundColor: FlutterFlowTheme.of(context).primary,
+          ),
+          GButton(
+            icon: Icons.search_sharp,
+            text: 'Pesquisar',
+            iconSize: 20.0,
           ),
           GButton(
             icon: FontAwesomeIcons.clipboardList,
@@ -185,8 +185,8 @@ class _NavBarPageState extends State<NavBarPage> {
             iconSize: 24.0,
           ),
           GButton(
-            icon: Icons.person,
-            text: 'Perfil',
+            icon: Icons.person_outline,
+            text: 'conta',
             iconSize: 24.0,
           )
         ],

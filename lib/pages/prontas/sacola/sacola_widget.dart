@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/components/add_endereco_entrega/add_endereco_entrega_widget.dart';
 import '/components/sacola_vazia/sacola_vazia_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -261,8 +262,34 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                               EdgeInsetsDirectional.fromSTEB(
                                                   6.0, 0.0, 0.0, 0.0),
                                           child: FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
+                                            onPressed: () async {
+                                              await showModalBottomSheet(
+                                                isScrollControlled: true,
+                                                backgroundColor:
+                                                    Colors.transparent,
+                                                enableDrag: false,
+                                                context: context,
+                                                builder: (context) {
+                                                  return GestureDetector(
+                                                    onTap: () => _model
+                                                            .unfocusNode
+                                                            .canRequestFocus
+                                                        ? FocusScope.of(context)
+                                                            .requestFocus(_model
+                                                                .unfocusNode)
+                                                        : FocusScope.of(context)
+                                                            .unfocus(),
+                                                    child: Padding(
+                                                      padding: MediaQuery
+                                                          .viewInsetsOf(
+                                                              context),
+                                                      child:
+                                                          AddEnderecoEntregaWidget(),
+                                                    ),
+                                                  );
+                                                },
+                                              ).then((value) =>
+                                                  safeSetState(() {}));
                                             },
                                             text: 'Definir',
                                             options: FFButtonOptions(
@@ -1407,9 +1434,6 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                             .toList()) -
                                                     FFAppState().cupomValor;
                                           });
-
-                                          context.pushNamed(
-                                              'selecionarEnderecoEntrega');
                                         },
                                         text: 'Finalizar compra',
                                         options: FFButtonOptions(

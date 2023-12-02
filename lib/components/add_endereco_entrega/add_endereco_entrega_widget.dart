@@ -78,9 +78,9 @@ class _AddEnderecoEntregaWidgetState extends State<AddEnderecoEntregaWidget> {
                     ),
                   ),
                   child: Lottie.network(
-                    'https://lottie.host/a4033003-ba2d-44c2-951a-69b33d3ca71d/jxxTNnqDjO.json',
-                    width: 200.0,
-                    height: 200.0,
+                    'https://assets3.lottiefiles.com/packages/lf20_6sxyjyjj.json',
+                    width: 150.0,
+                    height: 130.0,
                     fit: BoxFit.cover,
                     animate: true,
                   ),
