@@ -186,10 +186,33 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 10.0),
-                                  child: Text(
-                                    'Escolha até [ x ] Sabores',
-                                    style:
-                                        FlutterFlowTheme.of(context).bodySmall,
+                                  child: StreamBuilder<NsaborRecord>(
+                                    stream: NsaborRecord.getDocument(
+                                        produtosProdutoRecord.numeroSabor!),
+                                    builder: (context, snapshot) {
+                                      // Customize what your widget looks like when it's loading.
+                                      if (!snapshot.hasData) {
+                                        return Center(
+                                          child: SizedBox(
+                                            width: 50.0,
+                                            height: 50.0,
+                                            child: CircularProgressIndicator(
+                                              valueColor:
+                                                  AlwaysStoppedAnimation<Color>(
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }
+                                      final textNsaborRecord = snapshot.data!;
+                                      return Text(
+                                        'Escolha até ${textNsaborRecord.numero.toString()} Sabores',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall,
+                                      );
+                                    },
                                   ),
                                 ),
                                 StreamBuilder<List<ProdutoRecord>>(
@@ -321,7 +344,7 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                                                           checkColor:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .info,
+                                                                  .primary,
                                                           dense: true,
                                                           controlAffinity:
                                                               ListTileControlAffinity
