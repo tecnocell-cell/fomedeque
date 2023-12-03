@@ -54,6 +54,21 @@ class ProdutoRecord extends FirestoreRecord {
   bool get isActive => _isActive ?? false;
   bool hasIsActive() => _isActive != null;
 
+  // "isComposto" field.
+  bool? _isComposto;
+  bool get isComposto => _isComposto ?? false;
+  bool hasIsComposto() => _isComposto != null;
+
+  // "sabor" field.
+  String? _sabor;
+  String get sabor => _sabor ?? '';
+  bool hasSabor() => _sabor != null;
+
+  // "numeroSabor" field.
+  DocumentReference? _numeroSabor;
+  DocumentReference? get numeroSabor => _numeroSabor;
+  bool hasNumeroSabor() => _numeroSabor != null;
+
   void _initializeFields() {
     _nome = snapshotData['nome'] as String?;
     _valor = castToType<double>(snapshotData['valor']);
@@ -62,6 +77,9 @@ class ProdutoRecord extends FirestoreRecord {
     _categoria = snapshotData['categoria'] as DocumentReference?;
     _restaurante = snapshotData['restaurante'] as DocumentReference?;
     _isActive = snapshotData['isActive'] as bool?;
+    _isComposto = snapshotData['isComposto'] as bool?;
+    _sabor = snapshotData['sabor'] as String?;
+    _numeroSabor = snapshotData['numeroSabor'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -107,6 +125,13 @@ class ProdutoRecord extends FirestoreRecord {
             false,
           ),
           'isActive': snapshot.data['isActive'],
+          'isComposto': snapshot.data['isComposto'],
+          'sabor': snapshot.data['sabor'],
+          'numeroSabor': convertAlgoliaParam(
+            snapshot.data['numeroSabor'],
+            ParamType.DocumentReference,
+            false,
+          ),
         },
         ProdutoRecord.collection.doc(snapshot.objectID),
       );
@@ -150,6 +175,9 @@ Map<String, dynamic> createProdutoRecordData({
   DocumentReference? categoria,
   DocumentReference? restaurante,
   bool? isActive,
+  bool? isComposto,
+  String? sabor,
+  DocumentReference? numeroSabor,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -160,6 +188,9 @@ Map<String, dynamic> createProdutoRecordData({
       'categoria': categoria,
       'restaurante': restaurante,
       'isActive': isActive,
+      'isComposto': isComposto,
+      'sabor': sabor,
+      'numeroSabor': numeroSabor,
     }.withoutNulls,
   );
 
@@ -177,7 +208,10 @@ class ProdutoRecordDocumentEquality implements Equality<ProdutoRecord> {
         e1?.imagem == e2?.imagem &&
         e1?.categoria == e2?.categoria &&
         e1?.restaurante == e2?.restaurante &&
-        e1?.isActive == e2?.isActive;
+        e1?.isActive == e2?.isActive &&
+        e1?.isComposto == e2?.isComposto &&
+        e1?.sabor == e2?.sabor &&
+        e1?.numeroSabor == e2?.numeroSabor;
   }
 
   @override
@@ -188,7 +222,10 @@ class ProdutoRecordDocumentEquality implements Equality<ProdutoRecord> {
         e?.imagem,
         e?.categoria,
         e?.restaurante,
-        e?.isActive
+        e?.isActive,
+        e?.isComposto,
+        e?.sabor,
+        e?.numeroSabor
       ]);
 
   @override

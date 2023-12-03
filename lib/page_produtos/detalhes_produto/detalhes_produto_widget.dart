@@ -603,57 +603,47 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        detalhesProdutoProdutoRecord.nome,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Open Sans',
-                                              fontSize: 18.0,
-                                              fontWeight: FontWeight.bold,
-                                            ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            detalhesProdutoProdutoRecord.nome,
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Open Sans',
+                                                  fontSize: 18.0,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                          ),
+                                        ],
                                       ),
-                                      Text(
-                                        detalhesProdutoProdutoRecord.descricao,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Open Sans',
-                                              color: Color(0xFF7C7C7C),
-                                              fontSize: 16.0,
-                                              fontWeight: FontWeight.w600,
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            formatNumber(
+                                              detalhesProdutoProdutoRecord
+                                                  .valor,
+                                              formatType: FormatType.custom,
+                                              currency: 'R\$ ',
+                                              format: '.00',
+                                              locale: 'pt_BR',
                                             ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Open Sans',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  fontSize: 24.0,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                          ),
+                                        ],
                                       ),
                                     ].divide(SizedBox(height: 6.0)),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 0.0, 16.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    formatNumber(
-                                      detalhesProdutoProdutoRecord.valor,
-                                      formatType: FormatType.custom,
-                                      currency: 'R\$ ',
-                                      format: '.00',
-                                      locale: 'pt_BR',
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Open Sans',
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          fontSize: 24.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
                                   ),
                                 ],
                               ),
@@ -691,7 +681,7 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      'Detalhes do Produto',
+                                      detalhesProdutoProdutoRecord.descricao,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(

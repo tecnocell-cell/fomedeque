@@ -14,6 +14,9 @@ import 'schema/produto_venda_record.dart';
 import 'schema/venda_record.dart';
 import 'schema/endereco_record.dart';
 import 'schema/cupons_record.dart';
+import 'schema/adicionais_record.dart';
+import 'schema/bordas_record.dart';
+import 'schema/nsabor_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -30,6 +33,9 @@ export 'schema/produto_venda_record.dart';
 export 'schema/venda_record.dart';
 export 'schema/endereco_record.dart';
 export 'schema/cupons_record.dart';
+export 'schema/adicionais_record.dart';
+export 'schema/bordas_record.dart';
+export 'schema/nsabor_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -359,6 +365,117 @@ Future<List<CuponsRecord>> queryCuponsRecordOnce({
     queryCollectionOnce(
       CuponsRecord.collection,
       CuponsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query AdicionaisRecords (as a Stream and as a Future).
+Future<int> queryAdicionaisRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      AdicionaisRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<AdicionaisRecord>> queryAdicionaisRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      AdicionaisRecord.collection,
+      AdicionaisRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<AdicionaisRecord>> queryAdicionaisRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      AdicionaisRecord.collection,
+      AdicionaisRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query BordasRecords (as a Stream and as a Future).
+Future<int> queryBordasRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      BordasRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<BordasRecord>> queryBordasRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      BordasRecord.collection,
+      BordasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<BordasRecord>> queryBordasRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      BordasRecord.collection,
+      BordasRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query NsaborRecords (as a Stream and as a Future).
+Future<int> queryNsaborRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      NsaborRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<NsaborRecord>> queryNsaborRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      NsaborRecord.collection,
+      NsaborRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<NsaborRecord>> queryNsaborRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      NsaborRecord.collection,
+      NsaborRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

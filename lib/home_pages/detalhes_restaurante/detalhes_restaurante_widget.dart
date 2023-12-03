@@ -875,12 +875,15 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                                             CrossAxisAlignment.center,
                                                                         children: [
                                                                           Text(
-                                                                            rowProdutoRecord.nome,
+                                                                            rowProdutoRecord.nome.maybeHandleOverflow(
+                                                                              maxChars: 15,
+                                                                              replacement: '…',
+                                                                            ),
                                                                             style:
                                                                                 GoogleFonts.getFont(
                                                                               'Roboto Mono',
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              fontSize: 12.0,
+                                                                              fontSize: 11.0,
                                                                             ),
                                                                           ),
                                                                           Icon(
@@ -961,7 +964,7 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                                           fontWeight:
                                                                               FontWeight.bold,
                                                                           fontSize:
-                                                                              14.0,
+                                                                              12.0,
                                                                         ),
                                                                       ),
                                                                     ],
@@ -1432,18 +1435,35 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                 ),
                                                 FFButtonWidget(
                                                   onPressed: () async {
-                                                    context.pushNamed(
-                                                      'detalhesProduto',
-                                                      queryParameters: {
-                                                        'parametroProduto':
-                                                            serializeParam(
-                                                          columnProdutoRecord
-                                                              .reference,
-                                                          ParamType
-                                                              .DocumentReference,
-                                                        ),
-                                                      }.withoutNulls,
-                                                    );
+                                                    if (columnProdutoRecord
+                                                            .isComposto ==
+                                                        false) {
+                                                      context.pushNamed(
+                                                        'detalhesProduto',
+                                                        queryParameters: {
+                                                          'parametroProduto':
+                                                              serializeParam(
+                                                            columnProdutoRecord
+                                                                .reference,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    } else {
+                                                      context.pushNamed(
+                                                        'produtos',
+                                                        queryParameters: {
+                                                          'paramProdutoComposto':
+                                                              serializeParam(
+                                                            columnProdutoRecord
+                                                                .reference,
+                                                            ParamType
+                                                                .DocumentReference,
+                                                          ),
+                                                        }.withoutNulls,
+                                                      );
+                                                    }
                                                   },
                                                   text: 'Saiba Mais',
                                                   options: FFButtonOptions(
