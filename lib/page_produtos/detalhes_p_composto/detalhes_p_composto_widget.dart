@@ -1,6 +1,5 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -65,6 +64,26 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
           delay: 500.ms,
           duration: 400.ms,
           begin: Offset(2.0, 2.0),
+          end: Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+    'blurOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        ShakeEffect(
+          curve: Curves.easeInOut,
+          delay: 80.ms,
+          duration: 1000.ms,
+          hz: 5,
+          offset: Offset(0.0, 0.0),
+          rotation: 0.105,
+        ),
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 80.ms,
+          duration: 1000.ms,
+          begin: Offset(0.0, 0.0),
           end: Offset(1.0, 1.0),
         ),
       ],
@@ -478,6 +497,75 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                       ],
                                     ),
                                   ),
+                                  Align(
+                                    alignment: AlignmentDirectional(0.00, 1.00),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(30.0),
+                                      child: BackdropFilter(
+                                        filter: ImageFilter.blur(
+                                          sigmaX: 2.0,
+                                          sigmaY: 2.0,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 30.0),
+                                          child: Container(
+                                            width: 250.0,
+                                            height: 60.0,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xA79B1814),
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 10.0, 0.0),
+                                                  child: InkWell(
+                                                    splashColor:
+                                                        Colors.transparent,
+                                                    focusColor:
+                                                        Colors.transparent,
+                                                    hoverColor:
+                                                        Colors.transparent,
+                                                    highlightColor:
+                                                        Colors.transparent,
+                                                    onTap: () async {
+                                                      context
+                                                          .pushNamed('Login');
+                                                    },
+                                                    child: Text(
+                                                      detalhesPCompostoProdutoRecord
+                                                          .nome
+                                                          .maybeHandleOverflow(
+                                                        maxChars: 30,
+                                                        replacement: '…',
+                                                      ),
+                                                      style:
+                                                          GoogleFonts.getFont(
+                                                        'Roboto Mono',
+                                                        color: Colors.white,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontSize: 14.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ).animateOnPageLoad(animationsMap[
+                                        'blurOnPageLoadAnimation']!),
+                                  ),
                                 ],
                               ),
                             ).animateOnPageLoad(animationsMap[
@@ -549,20 +637,14 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 8.0),
+                                          16.0, 0.0, 16.0, 2.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
                                           Icon(
-                                            Icons.check_box,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 24.0,
-                                          ),
-                                          Icon(
-                                            Icons.check_box_outline_blank,
+                                            Icons.check_rounded,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             size: 24.0,
@@ -608,22 +690,29 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                           Align(
                                             alignment: AlignmentDirectional(
                                                 0.00, 0.00),
-                                            child: SelectionArea(
-                                                child: Text(
-                                              'Mussarela, Calabresa, A moda ',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Open Sans',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    fontSize: 12.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                            )).animateOnPageLoad(animationsMap[
-                                                'textOnPageLoadAnimation3']!),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      35.0, 0.0, 0.0, 0.0),
+                                              child: SelectionArea(
+                                                  child: Text(
+                                                'Mussarela, Calabresa, A moda ',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Open Sans',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      fontSize: 12.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                              )).animateOnPageLoad(animationsMap[
+                                                  'textOnPageLoadAnimation3']!),
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -639,20 +728,14 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 8.0),
+                                          16.0, 0.0, 16.0, 2.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
                                           Icon(
-                                            Icons.check_box,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 24.0,
-                                          ),
-                                          Icon(
-                                            Icons.check_box_outline_blank,
+                                            Icons.check_outlined,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             size: 24.0,
@@ -698,22 +781,29 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                           Align(
                                             alignment: AlignmentDirectional(
                                                 0.00, 0.00),
-                                            child: SelectionArea(
-                                                child: Text(
-                                              'Massa Grossa, Borda de Catupiry',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Open Sans',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    fontSize: 12.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                            )).animateOnPageLoad(animationsMap[
-                                                'textOnPageLoadAnimation5']!),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      35.0, 0.0, 0.0, 0.0),
+                                              child: SelectionArea(
+                                                  child: Text(
+                                                'Massa Grossa, Borda de Catupiry',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Open Sans',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      fontSize: 12.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                              )).animateOnPageLoad(animationsMap[
+                                                  'textOnPageLoadAnimation5']!),
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -729,20 +819,14 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 8.0),
+                                          16.0, 0.0, 16.0, 2.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
                                           Icon(
-                                            Icons.check_box,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            size: 24.0,
-                                          ),
-                                          Icon(
-                                            Icons.check_box_outline_blank,
+                                            Icons.check_outlined,
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             size: 24.0,
@@ -788,22 +872,29 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                           Align(
                                             alignment: AlignmentDirectional(
                                                 0.00, 0.00),
-                                            child: SelectionArea(
-                                                child: Text(
-                                              'Azeitona, calabresa , Tomate',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Open Sans',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    fontSize: 12.0,
-                                                    fontWeight: FontWeight.w600,
-                                                  ),
-                                            )).animateOnPageLoad(animationsMap[
-                                                'textOnPageLoadAnimation7']!),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      35.0, 0.0, 0.0, 0.0),
+                                              child: SelectionArea(
+                                                  child: Text(
+                                                'Azeitona, calabresa , Tomate',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Open Sans',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                      fontSize: 12.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                              )).animateOnPageLoad(animationsMap[
+                                                  'textOnPageLoadAnimation7']!),
+                                            ),
                                           ),
                                         ],
                                       ),
@@ -932,77 +1023,54 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                   children: [
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Stack(
                                               children: [
-                                                Container(
-                                                  width: 60.0,
-                                                  height: 60.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        blurRadius: 8.0,
-                                                        color:
-                                                            Color(0x20000000),
-                                                        offset:
-                                                            Offset(0.0, 4.0),
-                                                      )
-                                                    ],
-                                                    shape: BoxShape.circle,
+                                                Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 5.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
                                                   ),
-                                                  child: FlutterFlowIconButton(
-                                                    borderColor:
-                                                        Colors.transparent,
-                                                    borderRadius: 200.0,
-                                                    borderWidth: 1.0,
-                                                    buttonSize: 60.0,
-                                                    icon: Icon(
-                                                      Icons.masks_outlined,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 20.0,
+                                                  child: Container(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      shape: BoxShape.rectangle,
                                                     ),
-                                                    onPressed: () {
-                                                      print(
-                                                          'optSabores pressed ...');
-                                                    },
-                                                  ),
-                                                ),
-                                                Container(
-                                                  width: 60.0,
-                                                  height: 60.0,
-                                                  decoration: BoxDecoration(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryBackground,
-                                                    shape: BoxShape.circle,
-                                                  ),
-                                                  child: FlutterFlowIconButton(
-                                                    borderColor:
-                                                        Colors.transparent,
-                                                    borderRadius: 200.0,
-                                                    borderWidth: 1.0,
-                                                    buttonSize: 60.0,
-                                                    icon: Icon(
-                                                      Icons.masks_outlined,
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      size: 20.0,
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        child: Image.asset(
+                                                          'assets/images/Design_sem_nome_(4).png',
+                                                          width: 300.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.contain,
+                                                        ),
+                                                      ),
                                                     ),
-                                                    onPressed: () {
-                                                      print(
-                                                          'optSabores pressed ...');
-                                                    },
                                                   ),
                                                 ),
                                               ],
@@ -1029,43 +1097,57 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                     ),
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Container(
-                                              width: 60.0,
-                                              height: 60.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    blurRadius: 8.0,
-                                                    color: Color(0x20000000),
-                                                    offset: Offset(0.0, 4.0),
-                                                  )
-                                                ],
-                                                shape: BoxShape.circle,
-                                              ),
-                                              child: FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderRadius: 200.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 60.0,
-                                                icon: Icon(
-                                                  Icons.masks_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 20.0,
+                                            Stack(
+                                              children: [
+                                                Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 5.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        child: Image.asset(
+                                                          'assets/images/Design_sem_nome_(3).png',
+                                                          width: 300.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.contain,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
-                                                onPressed: () {
-                                                  print(
-                                                      'optSabores pressed ...');
-                                                },
-                                              ),
+                                              ],
                                             ),
                                           ],
                                         ),
@@ -1089,43 +1171,57 @@ class _DetalhesPCompostoWidgetState extends State<DetalhesPCompostoWidget>
                                     ),
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
                                       children: [
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Container(
-                                              width: 60.0,
-                                              height: 60.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    blurRadius: 8.0,
-                                                    color: Color(0x20000000),
-                                                    offset: Offset(0.0, 4.0),
-                                                  )
-                                                ],
-                                                shape: BoxShape.circle,
-                                              ),
-                                              child: FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderRadius: 200.0,
-                                                borderWidth: 1.0,
-                                                buttonSize: 60.0,
-                                                icon: Icon(
-                                                  Icons.masks_outlined,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 20.0,
+                                            Stack(
+                                              children: [
+                                                Material(
+                                                  color: Colors.transparent,
+                                                  elevation: 5.0,
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                  ),
+                                                  child: Container(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    decoration: BoxDecoration(
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                      shape: BoxShape.rectangle,
+                                                    ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0,
+                                                                  5.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        child: Image.asset(
+                                                          'assets/images/Design_sem_nome_(2).png',
+                                                          width: 300.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.contain,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
                                                 ),
-                                                onPressed: () {
-                                                  print(
-                                                      'optSabores pressed ...');
-                                                },
-                                              ),
+                                              ],
                                             ),
                                           ],
                                         ),
