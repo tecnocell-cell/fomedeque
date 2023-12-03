@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +11,12 @@ import 'adicionais_model.dart';
 export 'adicionais_model.dart';
 
 class AdicionaisWidget extends StatefulWidget {
-  const AdicionaisWidget({Key? key}) : super(key: key);
+  const AdicionaisWidget({
+    Key? key,
+    required this.paramProdutoBorda,
+  }) : super(key: key);
+
+  final DocumentReference? paramProdutoBorda;
 
   @override
   _AdicionaisWidgetState createState() => _AdicionaisWidgetState();
@@ -49,8 +55,8 @@ class _AdicionaisWidgetState extends State<AdicionaisWidget> {
 
     context.watch<FFAppState>();
 
-    return StreamBuilder<List<AdicionaisRecord>>(
-      stream: queryAdicionaisRecord(),
+    return StreamBuilder<ProdutoRecord>(
+      stream: ProdutoRecord.getDocument(widget.paramProdutoBorda!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -69,7 +75,7 @@ class _AdicionaisWidgetState extends State<AdicionaisWidget> {
             ),
           );
         }
-        List<AdicionaisRecord> adicionaisAdicionaisRecordList = snapshot.data!;
+        final adicionaisProdutoRecord = snapshot.data!;
         return Title(
             title: 'adicionais',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -146,7 +152,7 @@ class _AdicionaisWidgetState extends State<AdicionaisWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: Text(
-                                      'Pizza M 8 Fatias',
+                                      adicionaisProdutoRecord.nome,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -156,23 +162,43 @@ class _AdicionaisWidgetState extends State<AdicionaisWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 10.0),
                                   child: Text(
-                                    'LISTA DE ADICIONAIS',
+                                    'ADICIONAIS',
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
                                 ),
-                                Builder(
-                                  builder: (context) {
-                                    final adicionais =
-                                        adicionaisAdicionaisRecordList.toList();
+                                StreamBuilder<List<AdicionaisRecord>>(
+                                  stream: queryAdicionaisRecord(),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<AdicionaisRecord>
+                                        listViewAdicionaisRecordList =
+                                        snapshot.data!;
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
                                       shrinkWrap: true,
                                       scrollDirection: Axis.vertical,
-                                      itemCount: adicionais.length,
-                                      itemBuilder: (context, adicionaisIndex) {
-                                        final adicionaisItem =
-                                            adicionais[adicionaisIndex];
+                                      itemCount:
+                                          listViewAdicionaisRecordList.length,
+                                      itemBuilder: (context, listViewIndex) {
+                                        final listViewAdicionaisRecord =
+                                            listViewAdicionaisRecordList[
+                                                listViewIndex];
                                         return Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -213,16 +239,17 @@ class _AdicionaisWidgetState extends State<AdicionaisWidget> {
                                                         child: CheckboxListTile(
                                                           value: _model
                                                                   .checkboxListTileValueMap[
-                                                              adicionaisItem] ??= false,
+                                                              listViewAdicionaisRecord] ??= false,
                                                           onChanged:
                                                               (newValue) async {
                                                             setState(() => _model
                                                                         .checkboxListTileValueMap[
-                                                                    adicionaisItem] =
+                                                                    listViewAdicionaisRecord] =
                                                                 newValue!);
                                                           },
                                                           title: Text(
-                                                            adicionaisItem.nome,
+                                                            listViewAdicionaisRecord
+                                                                .nome,
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
@@ -237,7 +264,7 @@ class _AdicionaisWidgetState extends State<AdicionaisWidget> {
                                                           ),
                                                           subtitle: Text(
                                                             formatNumber(
-                                                              adicionaisItem
+                                                              listViewAdicionaisRecord
                                                                   .preco,
                                                               formatType:
                                                                   FormatType
@@ -301,7 +328,13 @@ class _AdicionaisWidgetState extends State<AdicionaisWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: Text(
-                                      'LISTA DE ADICIONAIS',
+                                      formatNumber(
+                                        adicionaisProdutoRecord.valor,
+                                        formatType: FormatType.custom,
+                                        currency: 'R\$ ',
+                                        format: '.00',
+                                        locale: 'pt_BR',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -316,8 +349,8 @@ class _AdicionaisWidgetState extends State<AdicionaisWidget> {
                                     children: [
                                       Expanded(
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            context.pushNamed('sacola');
                                           },
                                           text: 'Prosseguir',
                                           options: FFButtonOptions(

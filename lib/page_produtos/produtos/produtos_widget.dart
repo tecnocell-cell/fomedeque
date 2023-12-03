@@ -420,8 +420,17 @@ class _ProdutosWidgetState extends State<ProdutosWidget> {
                                     children: [
                                       Expanded(
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'bordas',
+                                              queryParameters: {
+                                                'paramPCpBorda': serializeParam(
+                                                  produtosProdutoRecord
+                                                      .reference,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
                                           },
                                           text: 'Prosseguir',
                                           options: FFButtonOptions(

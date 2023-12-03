@@ -209,7 +209,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'adicionais',
               path: 'adicionais',
               requireAuth: true,
-              builder: (context, params) => AdicionaisWidget(),
+              builder: (context, params) => AdicionaisWidget(
+                paramProdutoBorda: params.getParam('paramProdutoBorda',
+                    ParamType.DocumentReference, false, ['produto']),
+              ),
             ),
             FFRoute(
               name: 'produtos',
@@ -224,7 +227,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'bordas',
               path: 'bordas',
               requireAuth: true,
-              builder: (context, params) => BordasWidget(),
+              builder: (context, params) => BordasWidget(
+                paramPCpBorda: params.getParam('paramPCpBorda',
+                    ParamType.DocumentReference, false, ['produto']),
+              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),

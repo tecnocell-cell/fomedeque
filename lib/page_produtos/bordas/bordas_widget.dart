@@ -2,6 +2,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +11,12 @@ import 'bordas_model.dart';
 export 'bordas_model.dart';
 
 class BordasWidget extends StatefulWidget {
-  const BordasWidget({Key? key}) : super(key: key);
+  const BordasWidget({
+    Key? key,
+    required this.paramPCpBorda,
+  }) : super(key: key);
+
+  final DocumentReference? paramPCpBorda;
 
   @override
   _BordasWidgetState createState() => _BordasWidgetState();
@@ -49,8 +55,8 @@ class _BordasWidgetState extends State<BordasWidget> {
 
     context.watch<FFAppState>();
 
-    return StreamBuilder<List<AdicionaisRecord>>(
-      stream: queryAdicionaisRecord(),
+    return StreamBuilder<ProdutoRecord>(
+      stream: ProdutoRecord.getDocument(widget.paramPCpBorda!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -69,7 +75,7 @@ class _BordasWidgetState extends State<BordasWidget> {
             ),
           );
         }
-        List<AdicionaisRecord> bordasAdicionaisRecordList = snapshot.data!;
+        final bordasProdutoRecord = snapshot.data!;
         return Title(
             title: 'bordas',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
@@ -146,7 +152,7 @@ class _BordasWidgetState extends State<BordasWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: Text(
-                                      'Pizza M 8 Fatias',
+                                      bordasProdutoRecord.nome,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -156,23 +162,43 @@ class _BordasWidgetState extends State<BordasWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 10.0, 0.0, 10.0),
                                   child: Text(
-                                    'LISTA DE ADICIONAIS',
+                                    'Escolha a Borda',
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
                                 ),
-                                Builder(
-                                  builder: (context) {
-                                    final adicionais =
-                                        bordasAdicionaisRecordList.toList();
+                                StreamBuilder<List<BordasRecord>>(
+                                  stream: queryBordasRecord(),
+                                  builder: (context, snapshot) {
+                                    // Customize what your widget looks like when it's loading.
+                                    if (!snapshot.hasData) {
+                                      return Center(
+                                        child: SizedBox(
+                                          width: 50.0,
+                                          height: 50.0,
+                                          child: CircularProgressIndicator(
+                                            valueColor:
+                                                AlwaysStoppedAnimation<Color>(
+                                              FlutterFlowTheme.of(context)
+                                                  .primary,
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    }
+                                    List<BordasRecord>
+                                        listViewBordasRecordList =
+                                        snapshot.data!;
                                     return ListView.builder(
                                       padding: EdgeInsets.zero,
                                       shrinkWrap: true,
                                       scrollDirection: Axis.vertical,
-                                      itemCount: adicionais.length,
-                                      itemBuilder: (context, adicionaisIndex) {
-                                        final adicionaisItem =
-                                            adicionais[adicionaisIndex];
+                                      itemCount:
+                                          listViewBordasRecordList.length,
+                                      itemBuilder: (context, listViewIndex) {
+                                        final listViewBordasRecord =
+                                            listViewBordasRecordList[
+                                                listViewIndex];
                                         return Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -213,16 +239,17 @@ class _BordasWidgetState extends State<BordasWidget> {
                                                         child: CheckboxListTile(
                                                           value: _model
                                                                   .checkboxListTileValueMap[
-                                                              adicionaisItem] ??= false,
+                                                              listViewBordasRecord] ??= false,
                                                           onChanged:
                                                               (newValue) async {
                                                             setState(() => _model
                                                                         .checkboxListTileValueMap[
-                                                                    adicionaisItem] =
+                                                                    listViewBordasRecord] =
                                                                 newValue!);
                                                           },
                                                           title: Text(
-                                                            adicionaisItem.nome,
+                                                            listViewBordasRecord
+                                                                .nome,
                                                             textAlign:
                                                                 TextAlign.start,
                                                             style: FlutterFlowTheme
@@ -237,7 +264,7 @@ class _BordasWidgetState extends State<BordasWidget> {
                                                           ),
                                                           subtitle: Text(
                                                             formatNumber(
-                                                              adicionaisItem
+                                                              listViewBordasRecord
                                                                   .preco,
                                                               formatType:
                                                                   FormatType
@@ -301,7 +328,13 @@ class _BordasWidgetState extends State<BordasWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: Text(
-                                      'LISTA DE ADICIONAIS',
+                                      formatNumber(
+                                        bordasProdutoRecord.valor,
+                                        formatType: FormatType.custom,
+                                        currency: 'R\$ ',
+                                        format: '.00',
+                                        locale: 'pt_BR',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -316,8 +349,17 @@ class _BordasWidgetState extends State<BordasWidget> {
                                     children: [
                                       Expanded(
                                         child: FFButtonWidget(
-                                          onPressed: () {
-                                            print('Button pressed ...');
+                                          onPressed: () async {
+                                            context.pushNamed(
+                                              'adicionais',
+                                              queryParameters: {
+                                                'paramProdutoBorda':
+                                                    serializeParam(
+                                                  bordasProdutoRecord.reference,
+                                                  ParamType.DocumentReference,
+                                                ),
+                                              }.withoutNulls,
+                                            );
                                           },
                                           text: 'Prosseguir',
                                           options: FFButtonOptions(
