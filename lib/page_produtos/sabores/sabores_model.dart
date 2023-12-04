@@ -2,19 +2,21 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'adicional_widget.dart' show AdicionalWidget;
+import 'sabores_widget.dart' show SaboresWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class AdicionalModel extends FlutterFlowModel<AdicionalWidget> {
-  ///  State fields for stateful widgets in this component.
+class SaboresModel extends FlutterFlowModel<SaboresWidget> {
+  ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for CheckboxListTile widget.
 
-  Map<AdicionaisRecord, bool> checkboxListTileValueMap = {};
-  List<AdicionaisRecord> get checkboxListTileCheckedItems =>
+  Map<ProdutoRecord, bool> checkboxListTileValueMap = {};
+  List<ProdutoRecord> get checkboxListTileCheckedItems =>
       checkboxListTileValueMap.entries
           .where((e) => e.value)
           .map((e) => e.key)
@@ -24,7 +26,9 @@ class AdicionalModel extends FlutterFlowModel<AdicionalWidget> {
 
   void initState(BuildContext context) {}
 
-  void dispose() {}
+  void dispose() {
+    unfocusNode.dispose();
+  }
 
   /// Action blocks are added here.
 

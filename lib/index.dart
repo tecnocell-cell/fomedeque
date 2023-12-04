@@ -22,5 +22,6 @@ export '/pages_auth/meus_enderecos/meus_enderecos_widget.dart'
 export '/pages_auth/editar_endereco/editar_endereco_widget.dart'
     show EditarEnderecoWidget;
 export '/pages_auth/config/config_widget.dart' show ConfigWidget;
-export '/page_produtos/detalhes_p_composto/detalhes_p_composto_widget.dart'
-    show DetalhesPCompostoWidget;
+export '/page_produtos/adicionais/adicionais_widget.dart' show AdicionaisWidget;
+export '/page_produtos/sabores/sabores_widget.dart' show SaboresWidget;
+export '/page_produtos/bordas/bordas_widget.dart' show BordasWidget;

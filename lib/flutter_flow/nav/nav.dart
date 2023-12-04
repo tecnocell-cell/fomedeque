@@ -206,11 +206,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                   : ConfigWidget(),
             ),
             FFRoute(
-              name: 'detalhesPComposto',
-              path: 'detalhesPComposto',
+              name: 'adicionais',
+              path: 'adicionais',
               requireAuth: true,
-              builder: (context, params) => DetalhesPCompostoWidget(
-                parametroProduto: params.getParam('parametroProduto',
+              builder: (context, params) => AdicionaisWidget(
+                paramProdutoBorda: params.getParam('paramProdutoBorda',
+                    ParamType.DocumentReference, false, ['produto']),
+              ),
+            ),
+            FFRoute(
+              name: 'Sabores',
+              path: 'sabores',
+              requireAuth: true,
+              builder: (context, params) => SaboresWidget(
+                paramProdutoComposto: params.getParam('paramProdutoComposto',
+                    ParamType.DocumentReference, false, ['produto']),
+              ),
+            ),
+            FFRoute(
+              name: 'bordas',
+              path: 'bordas',
+              requireAuth: true,
+              builder: (context, params) => BordasWidget(
+                paramPCpBorda: params.getParam('paramPCpBorda',
                     ParamType.DocumentReference, false, ['produto']),
               ),
             )

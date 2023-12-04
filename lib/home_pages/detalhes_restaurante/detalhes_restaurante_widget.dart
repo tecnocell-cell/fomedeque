@@ -258,45 +258,36 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                             ),
                           ),
                         ),
-                        InkWell(
-                          splashColor: Colors.transparent,
-                          focusColor: Colors.transparent,
-                          hoverColor: Colors.transparent,
-                          highlightColor: Colors.transparent,
-                          onTap: () async {
-                            context.pushNamed('sacola');
-                          },
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              badges.Badge(
-                                badgeContent: Text(
-                                  FFAppState().addCarrinho.toString(),
-                                  textAlign: TextAlign.justify,
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Open Sans',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        fontSize: 19.0,
-                                      ),
-                                ),
-                                showBadge: true,
-                                shape: badges.BadgeShape.circle,
-                                badgeColor: Color(0x00FFFFFF),
-                                elevation: 1.0,
-                                position: badges.BadgePosition.topEnd(),
-                                animationType: badges.BadgeAnimationType.scale,
-                                toAnimate: true,
-                                child: Icon(
-                                  Icons.shopping_cart_rounded,
-                                  color: FlutterFlowTheme.of(context).primary,
-                                  size: 24.0,
-                                ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            badges.Badge(
+                              badgeContent: Text(
+                                FFAppState().addCarrinho.toString(),
+                                textAlign: TextAlign.justify,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Open Sans',
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondary,
+                                      fontSize: 19.0,
+                                    ),
                               ),
-                            ],
-                          ),
+                              showBadge: true,
+                              shape: badges.BadgeShape.circle,
+                              badgeColor: Color(0x00FFFFFF),
+                              elevation: 1.0,
+                              position: badges.BadgePosition.topEnd(),
+                              animationType: badges.BadgeAnimationType.scale,
+                              toAnimate: true,
+                              child: Icon(
+                                Icons.shopping_cart_rounded,
+                                color: FlutterFlowTheme.of(context).primary,
+                                size: 24.0,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -1452,9 +1443,9 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                       );
                                                     } else {
                                                       context.pushNamed(
-                                                        'detalhesPComposto',
+                                                        'Sabores',
                                                         queryParameters: {
-                                                          'parametroProduto':
+                                                          'paramProdutoComposto':
                                                               serializeParam(
                                                             columnProdutoRecord
                                                                 .reference,

@@ -2,15 +2,17 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'massas_widget.dart' show MassasWidget;
+import 'bordas_widget.dart' show BordasWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class MassasModel extends FlutterFlowModel<MassasWidget> {
-  ///  State fields for stateful widgets in this component.
+class BordasModel extends FlutterFlowModel<BordasWidget> {
+  ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for CheckboxListTile widget.
 
   Map<BordasRecord, bool> checkboxListTileValueMap = {};
@@ -24,7 +26,9 @@ class MassasModel extends FlutterFlowModel<MassasWidget> {
 
   void initState(BuildContext context) {}
 
-  void dispose() {}
+  void dispose() {
+    unfocusNode.dispose();
+  }
 
   /// Action blocks are added here.
 
