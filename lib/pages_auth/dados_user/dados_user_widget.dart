@@ -66,10 +66,11 @@ class _DadosUserWidgetState extends State<DadosUserWidget> {
               title: Text(
                 'Meus dados',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Open Sans',
+                      fontFamily: 'montapizza',
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 22.0,
                       fontWeight: FontWeight.normal,
+                      useGoogleFonts: false,
                     ),
               ),
               actions: [],
@@ -134,9 +135,10 @@ class _DadosUserWidgetState extends State<DadosUserWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.w600,
+                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ),
@@ -199,9 +201,10 @@ class _DadosUserWidgetState extends State<DadosUserWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               fontSize: 18.0,
                                               fontWeight: FontWeight.w600,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ],
@@ -274,9 +277,10 @@ class _DadosUserWidgetState extends State<DadosUserWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 fontSize: 18.0,
                                                 fontWeight: FontWeight.w600,
+                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ],

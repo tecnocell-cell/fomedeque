@@ -151,8 +151,9 @@ class _PesquisaWidgetState extends State<PesquisaWidget> {
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
-                                                      fontFamily: 'Open Sans',
+                                                      fontFamily: 'montapizza',
                                                       color: Color(0xFF858585),
+                                                      useGoogleFonts: false,
                                                     ),
                                             enabledBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
@@ -281,12 +282,13 @@ class _PesquisaWidgetState extends State<PesquisaWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           color:
                                                               Color(0xFF2B2B2B),
                                                           fontSize: 18.0,
                                                           fontWeight:
                                                               FontWeight.w600,
+                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -329,10 +331,12 @@ class _PesquisaWidgetState extends State<PesquisaWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 color: Color(
                                                                     0xFF07AE09),
                                                                 fontSize: 15.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                     ),
                                                   ],
@@ -383,7 +387,7 @@ class _PesquisaWidgetState extends State<PesquisaWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 color: Color(
                                                                     0xFF333333),
                                                                 fontWeight:
@@ -392,6 +396,8 @@ class _PesquisaWidgetState extends State<PesquisaWidget> {
                                                                 fontStyle:
                                                                     FontStyle
                                                                         .italic,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         );
                                                       },

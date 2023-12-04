@@ -60,9 +60,10 @@ class _TopMenuWidgetState extends State<TopMenuWidget> {
                     builder: (context) => Text(
                       currentUserDisplayName,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Open Sans',
+                            fontFamily: 'montapizza',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 12.0,
+                            useGoogleFonts: false,
                           ),
                     ),
                   ),
@@ -79,8 +80,9 @@ class _TopMenuWidgetState extends State<TopMenuWidget> {
                   Text(
                     'Rua Ayrton Senna, 04',
                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                          fontFamily: 'Open Sans',
+                          fontFamily: 'montapizza',
                           color: FlutterFlowTheme.of(context).primaryText,
+                          useGoogleFonts: false,
                         ),
                   ),
                   Icon(
@@ -103,9 +105,10 @@ class _TopMenuWidgetState extends State<TopMenuWidget> {
               badgeContent: Text(
                 '1',
                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Open Sans',
+                      fontFamily: 'montapizza',
                       color: Colors.white,
                       fontSize: 14.0,
+                      useGoogleFonts: false,
                     ),
               ),
               showBadge: true,

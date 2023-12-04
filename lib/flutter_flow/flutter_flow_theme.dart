@@ -159,107 +159,107 @@ class ThemeTypography extends Typography {
 
   final FlutterFlowTheme theme;
 
-  String get displayLargeFamily => 'Open Sans';
-  TextStyle get displayLarge => GoogleFonts.getFont(
-        'Open Sans',
+  String get displayLargeFamily => 'montapizza';
+  TextStyle get displayLarge => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 57.0,
       );
-  String get displayMediumFamily => 'Open Sans';
-  TextStyle get displayMedium => GoogleFonts.getFont(
-        'Open Sans',
+  String get displayMediumFamily => 'montapizza';
+  TextStyle get displayMedium => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 45.0,
       );
-  String get displaySmallFamily => 'Open Sans';
-  TextStyle get displaySmall => GoogleFonts.getFont(
-        'Open Sans',
+  String get displaySmallFamily => 'montapizza';
+  TextStyle get displaySmall => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
       );
-  String get headlineLargeFamily => 'Open Sans';
-  TextStyle get headlineLarge => GoogleFonts.getFont(
-        'Open Sans',
+  String get headlineLargeFamily => 'montapizza';
+  TextStyle get headlineLarge => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 32.0,
       );
-  String get headlineMediumFamily => 'Open Sans';
-  TextStyle get headlineMedium => GoogleFonts.getFont(
-        'Open Sans',
+  String get headlineMediumFamily => 'montapizza';
+  TextStyle get headlineMedium => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.secondaryText,
         fontWeight: FontWeight.w600,
         fontSize: 22.0,
       );
-  String get headlineSmallFamily => 'Open Sans';
-  TextStyle get headlineSmall => GoogleFonts.getFont(
-        'Open Sans',
+  String get headlineSmallFamily => 'montapizza';
+  TextStyle get headlineSmall => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 20.0,
       );
-  String get titleLargeFamily => 'Open Sans';
-  TextStyle get titleLarge => GoogleFonts.getFont(
-        'Open Sans',
+  String get titleLargeFamily => 'montapizza';
+  TextStyle get titleLarge => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
-  String get titleMediumFamily => 'Open Sans';
-  TextStyle get titleMedium => GoogleFonts.getFont(
-        'Open Sans',
+  String get titleMediumFamily => 'montapizza';
+  TextStyle get titleMedium => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 18.0,
       );
-  String get titleSmallFamily => 'Open Sans';
-  TextStyle get titleSmall => GoogleFonts.getFont(
-        'Open Sans',
+  String get titleSmallFamily => 'montapizza';
+  TextStyle get titleSmall => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.secondaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
-  String get labelLargeFamily => 'Open Sans';
-  TextStyle get labelLarge => GoogleFonts.getFont(
-        'Open Sans',
+  String get labelLargeFamily => 'montapizza';
+  TextStyle get labelLarge => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
-  String get labelMediumFamily => 'Open Sans';
-  TextStyle get labelMedium => GoogleFonts.getFont(
-        'Open Sans',
+  String get labelMediumFamily => 'montapizza';
+  TextStyle get labelMedium => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
-  String get labelSmallFamily => 'Open Sans';
-  TextStyle get labelSmall => GoogleFonts.getFont(
-        'Open Sans',
+  String get labelSmallFamily => 'montapizza';
+  TextStyle get labelSmall => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 11.0,
       );
-  String get bodyLargeFamily => 'Open Sans';
-  TextStyle get bodyLarge => GoogleFonts.getFont(
-        'Open Sans',
+  String get bodyLargeFamily => 'montapizza';
+  TextStyle get bodyLarge => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodyMediumFamily => 'Open Sans';
-  TextStyle get bodyMedium => GoogleFonts.getFont(
-        'Open Sans',
+  String get bodyMediumFamily => 'montapizza';
+  TextStyle get bodyMedium => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
-  String get bodySmallFamily => 'Open Sans';
-  TextStyle get bodySmall => GoogleFonts.getFont(
-        'Open Sans',
+  String get bodySmallFamily => 'montapizza';
+  TextStyle get bodySmall => TextStyle(
+        fontFamily: 'montapizza',
         color: theme.secondaryText,
         fontWeight: FontWeight.w600,
         fontSize: 14.0,

@@ -100,12 +100,13 @@ class _MeusEnderecosWidgetState extends State<MeusEnderecosWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .displayMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
                                                 fontSize: 15.0,
                                                 letterSpacing: 1.0,
+                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ),
@@ -166,8 +167,10 @@ class _MeusEnderecosWidgetState extends State<MeusEnderecosWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 fontSize: 18.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                     ),
                                                   ),
@@ -296,7 +299,7 @@ class _MeusEnderecosWidgetState extends State<MeusEnderecosWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Open Sans',
+                                                                        'montapizza',
                                                                     fontSize:
                                                                         18.0,
                                                                     letterSpacing:
@@ -304,6 +307,8 @@ class _MeusEnderecosWidgetState extends State<MeusEnderecosWidget> {
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .bold,
+                                                                    useGoogleFonts:
+                                                                        false,
                                                                   ),
                                                             ),
                                                           ),
@@ -329,9 +334,11 @@ class _MeusEnderecosWidgetState extends State<MeusEnderecosWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Open Sans',
+                                                                      'montapizza',
                                                                   fontSize:
                                                                       14.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                         ],
@@ -356,9 +363,11 @@ class _MeusEnderecosWidgetState extends State<MeusEnderecosWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Open Sans',
+                                                                      'montapizza',
                                                                   fontSize:
                                                                       14.0,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                         ],

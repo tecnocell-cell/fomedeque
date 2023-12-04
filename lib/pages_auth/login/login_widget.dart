@@ -310,11 +310,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .labelLarge
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryText,
                                                                 fontSize: 14.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                       enabledBorder:
                                                           OutlineInputBorder(
@@ -379,8 +381,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         .bodyLarge
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           fontSize: 14.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                                     keyboardType: TextInputType
                                                         .emailAddress,
@@ -433,8 +436,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .labelLarge
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 fontSize: 14.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                       enabledBorder:
                                                           OutlineInputBorder(
@@ -521,8 +526,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         .bodyLarge
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           fontSize: 14.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                                     keyboardType:
                                                         TextInputType.multiline,
@@ -589,11 +595,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         fontSize: 22.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 10.0,
                                                   borderSide: BorderSide(
@@ -635,7 +643,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           .of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -643,6 +652,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         fontSize: 16.0,
                                                         fontWeight:
                                                             FontWeight.bold,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 0.0,
                                                   borderSide: BorderSide(
@@ -816,8 +826,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontSize: 14.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   validator: _model
                                                       .nomeCadastroControllerValidator
@@ -933,8 +945,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontSize: 14.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   keyboardType: TextInputType
                                                       .emailAddress,
@@ -1076,8 +1090,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontSize: 14.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   validator: _model
                                                       .senhaCadastroControllerValidator
@@ -1218,8 +1234,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           context)
                                                       .bodyLarge
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontSize: 14.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   validator: _model
                                                       .rSenhaCadastroControllerValidator
@@ -1293,11 +1311,13 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         fontSize: 22.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   elevation: 10.0,
                                                   borderSide: BorderSide(

@@ -96,9 +96,10 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                   title: Text(
                     'Meus pedidos',
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
-                          fontFamily: 'Open Sans',
+                          fontFamily: 'montapizza',
                           color: FlutterFlowTheme.of(context).alternate,
                           fontSize: 22.0,
+                          useGoogleFonts: false,
                         ),
                   ),
                   actions: [],
@@ -201,12 +202,14 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                                                                   .bodyMedium
                                                                   .override(
                                                                     fontFamily:
-                                                                        'Open Sans',
+                                                                        'montapizza',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .success,
                                                                     fontSize:
                                                                         18.0,
+                                                                    useGoogleFonts:
+                                                                        false,
                                                                   ),
                                                             ),
                                                           ],
@@ -318,8 +321,9 @@ class _PedidosWidgetState extends State<PedidosWidget> {
                                                                               Text(
                                                                             rowProdutoRecord.nome,
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Open Sans',
+                                                                                  fontFamily: 'montapizza',
                                                                                   fontSize: 15.0,
+                                                                                  useGoogleFonts: false,
                                                                                 ),
                                                                           ),
                                                                         ),

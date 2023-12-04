@@ -114,9 +114,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
               title: Text(
                 'Realizar Pagamento',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
-                      fontFamily: 'Open Sans',
+                      fontFamily: 'montapizza',
                       color: FlutterFlowTheme.of(context).primaryText,
                       fontSize: 22.0,
+                      useGoogleFonts: false,
                     ),
               ),
               actions: [],
@@ -185,9 +186,15 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                       decoration: InputDecoration(
                                         labelText: 'chavePix',
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium,
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Open Sans',
+                                            ),
                                         hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium,
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Open Sans',
+                                            ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -229,7 +236,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                             .secondaryBackground,
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Open Sans',
+                                          ),
                                       maxLines: 3,
                                       validator: _model.textController1Validator
                                           .asValidator(context),
@@ -316,8 +326,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Open Sans',
+                                            fontFamily: 'montapizza',
                                             fontSize: 20.0,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ],
@@ -345,8 +356,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Open Sans',
+                                                    fontFamily: 'montapizza',
                                                     fontWeight: FontWeight.w300,
+                                                    useGoogleFonts: false,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -393,8 +405,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               fontWeight: FontWeight.w300,
+                                              useGoogleFonts: false,
                                             ),
                                         validator: _model
                                             .nomecartaoControllerValidator
@@ -428,8 +441,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Open Sans',
+                                                    fontFamily: 'montapizza',
                                                     fontWeight: FontWeight.w200,
+                                                    useGoogleFonts: false,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -474,8 +488,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               fontWeight: FontWeight.w300,
+                                              useGoogleFonts: false,
                                             ),
                                         keyboardType: TextInputType.number,
                                         validator: _model
@@ -514,8 +529,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .labelMedium
                                                   .override(
-                                                    fontFamily: 'Open Sans',
+                                                    fontFamily: 'montapizza',
                                                     fontWeight: FontWeight.w200,
+                                                    useGoogleFonts: false,
                                                   ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -560,8 +576,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               fontWeight: FontWeight.w300,
+                                              useGoogleFonts: false,
                                             ),
                                         textAlign: TextAlign.center,
                                         keyboardType: TextInputType.number,
@@ -602,9 +619,11 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                                           .of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontWeight:
                                                             FontWeight.w200,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
@@ -661,9 +680,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           fontWeight:
                                                               FontWeight.w300,
+                                                          useGoogleFonts: false,
                                                         ),
                                                 textAlign: TextAlign.center,
                                                 keyboardType:
@@ -698,9 +718,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                                         .labelMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           fontWeight:
                                                               FontWeight.w200,
+                                                          useGoogleFonts: false,
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
@@ -748,14 +769,14 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                                           8.0),
                                                 ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Open Sans',
-                                                        fontWeight:
-                                                            FontWeight.w300,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'montapizza',
+                                                    fontWeight: FontWeight.w300,
+                                                    useGoogleFonts: false,
+                                                  ),
                                               textAlign: TextAlign.center,
                                               keyboardType:
                                                   TextInputType.number,
@@ -803,9 +824,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               fontSize: 14.0,
                                               fontWeight: FontWeight.w300,
+                                              useGoogleFonts: false,
                                             ),
                                         hintText: 'Parcelar em quantas vezes?',
                                         icon: Icon(
@@ -845,8 +867,9 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Open Sans',
+                                  fontFamily: 'montapizza',
                                   color: Color(0xFF838383),
+                                  useGoogleFonts: false,
                                 ),
                           ),
                         ],
@@ -868,10 +891,11 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Open Sans',
+                                  fontFamily: 'montapizza',
                                   color: FlutterFlowTheme.of(context).primary,
                                   fontSize: 30.0,
                                   fontWeight: FontWeight.bold,
+                                  useGoogleFonts: false,
                                 ),
                           ),
                         ],
@@ -894,10 +918,11 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Open Sans',
+                                        fontFamily: 'montapizza',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontWeight: FontWeight.w300,
+                                        useGoogleFonts: false,
                                       ),
                                 ),
                                 TextSpan(
@@ -1165,9 +1190,10 @@ class _PagamentoWidgetState extends State<PagamentoWidget> {
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Open Sans',
+                                            fontFamily: 'montapizza',
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
+                                            useGoogleFonts: false,
                                           ),
                                       elevation: 5.0,
                                       borderSide: BorderSide(

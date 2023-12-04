@@ -129,10 +129,11 @@ class _AddEnderecoEntregaWidgetState extends State<AddEnderecoEntregaWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
+                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ),
@@ -186,10 +187,12 @@ class _AddEnderecoEntregaWidgetState extends State<AddEnderecoEntregaWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontSize: 16.0,
                                                         fontWeight:
                                                             FontWeight.bold,
+                                                        useGoogleFonts: false,
                                                       ),
                                                 ),
                                               ),
@@ -304,7 +307,7 @@ class _AddEnderecoEntregaWidgetState extends State<AddEnderecoEntregaWidget> {
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Open Sans',
+                                                                      'montapizza',
                                                                   fontSize:
                                                                       16.0,
                                                                   letterSpacing:
@@ -312,6 +315,8 @@ class _AddEnderecoEntregaWidgetState extends State<AddEnderecoEntregaWidget> {
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -340,8 +345,10 @@ class _AddEnderecoEntregaWidgetState extends State<AddEnderecoEntregaWidget> {
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 fontSize: 14.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                       ],
@@ -358,8 +365,10 @@ class _AddEnderecoEntregaWidgetState extends State<AddEnderecoEntregaWidget> {
                                                             .bodyMedium
                                                             .override(
                                                               fontFamily:
-                                                                  'Open Sans',
+                                                                  'montapizza',
                                                               fontSize: 14.0,
+                                                              useGoogleFonts:
+                                                                  false,
                                                             ),
                                                       ),
                                                     ],

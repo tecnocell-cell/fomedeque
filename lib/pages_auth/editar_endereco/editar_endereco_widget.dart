@@ -180,9 +180,11 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontSize: 14.0,
                                                         letterSpacing: 1.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
@@ -281,10 +283,12 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                                               .labelMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                       hintStyle:
                                                           FlutterFlowTheme.of(
@@ -413,11 +417,12 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Open Sans',
+                                                      fontFamily: 'montapizza',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -507,11 +512,12 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Open Sans',
+                                                      fontFamily: 'montapizza',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -603,16 +609,16 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Número',
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Open Sans',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                      ),
+                                              labelStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'montapizza',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    useGoogleFonts: false,
+                                                  ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium,
@@ -704,11 +710,12 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Open Sans',
+                                                      fontFamily: 'montapizza',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -799,11 +806,12 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Open Sans',
+                                                      fontFamily: 'montapizza',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -896,16 +904,16 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               labelText: 'Estado',
-                                              labelStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Open Sans',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryText,
-                                                      ),
+                                              labelStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .labelMedium
+                                                  .override(
+                                                    fontFamily: 'montapizza',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    useGoogleFonts: false,
+                                                  ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium,
@@ -994,11 +1002,12 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .labelMedium
                                                     .override(
-                                                      fontFamily: 'Open Sans',
+                                                      fontFamily: 'montapizza',
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      useGoogleFonts: false,
                                                     ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
@@ -1118,12 +1127,13 @@ class _EditarEnderecoWidgetState extends State<EditarEnderecoWidget>
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Open Sans',
+                                                  fontFamily: 'montapizza',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
                                                   fontSize: 18.0,
                                                   fontWeight: FontWeight.bold,
+                                                  useGoogleFonts: false,
                                                 ),
                                           ),
                                         ],

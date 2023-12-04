@@ -105,9 +105,10 @@ class _AtualizarItemWidgetState extends State<AtualizarItemWidget> {
                       Text(
                         rowProdutoRecord.nome,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Open Sans',
+                              fontFamily: 'montapizza',
                               fontSize: 20.0,
                               fontWeight: FontWeight.w600,
+                              useGoogleFonts: false,
                             ),
                       ),
                     ],
@@ -124,8 +125,9 @@ class _AtualizarItemWidgetState extends State<AtualizarItemWidget> {
                   Text(
                     'Atualizar item da sacola',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Open Sans',
+                          fontFamily: 'montapizza',
                           fontSize: 18.0,
+                          useGoogleFonts: false,
                         ),
                   ),
                 ],
@@ -246,8 +248,9 @@ class _AtualizarItemWidgetState extends State<AtualizarItemWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Open Sans',
+                                  fontFamily: 'montapizza',
                                   color: Colors.white,
+                                  useGoogleFonts: false,
                                 ),
                             elevation: 5.0,
                             borderSide: BorderSide(
@@ -275,8 +278,9 @@ class _AtualizarItemWidgetState extends State<AtualizarItemWidget> {
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Open Sans',
+                                fontFamily: 'montapizza',
                                 color: Colors.white,
+                                useGoogleFonts: false,
                               ),
                       elevation: 5.0,
                       borderSide: BorderSide(

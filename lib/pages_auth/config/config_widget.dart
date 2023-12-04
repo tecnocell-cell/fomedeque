@@ -134,9 +134,11 @@ class _ConfigWidgetState extends State<ConfigWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontSize: 20.0,
                                                         letterSpacing: 1.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ),
@@ -159,11 +161,12 @@ class _ConfigWidgetState extends State<ConfigWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 16.0,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ],
@@ -613,12 +616,13 @@ class _ConfigWidgetState extends State<ConfigWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               fontSize: 18.0,
                                               fontWeight: FontWeight.bold,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                       Icon(

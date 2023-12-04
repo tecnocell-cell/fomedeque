@@ -200,9 +200,10 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            fontFamily: 'Open Sans',
+                                            fontFamily: 'montapizza',
                                             fontSize: 14.0,
                                             letterSpacing: 1.0,
+                                            useGoogleFonts: false,
                                           ),
                                     ),
                                   ),
@@ -255,11 +256,13 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                                           .of(context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
@@ -374,8 +377,10 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         color: Colors.white,
+                                                        useGoogleFonts: false,
                                                       ),
                                               elevation: 3.0,
                                               borderSide: BorderSide(
@@ -420,10 +425,11 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
+                                              useGoogleFonts: false,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
@@ -501,10 +507,11 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
+                                              useGoogleFonts: false,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
@@ -586,10 +593,11 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                                   context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
+                                                useGoogleFonts: false,
                                               ),
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
@@ -677,10 +685,11 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
+                                              useGoogleFonts: false,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
@@ -759,10 +768,11 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
+                                              useGoogleFonts: false,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
@@ -845,10 +855,11 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                                   context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
+                                                useGoogleFonts: false,
                                               ),
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
@@ -935,10 +946,11 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
+                                              useGoogleFonts: false,
                                             ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium,
@@ -1078,12 +1090,13 @@ class _CadastrarEnderecoWidgetState extends State<CadastrarEnderecoWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               fontSize: 18.0,
                                               fontWeight: FontWeight.bold,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ],

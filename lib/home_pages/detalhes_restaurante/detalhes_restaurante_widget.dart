@@ -268,10 +268,11 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Open Sans',
+                                      fontFamily: 'montapizza',
                                       color: FlutterFlowTheme.of(context)
                                           .secondary,
                                       fontSize: 19.0,
+                                      useGoogleFonts: false,
                                     ),
                               ),
                               showBadge: true,
@@ -328,16 +329,16 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                     ?.nome,
                                                 '1',
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Open Sans',
-                                                        fontSize: 30.0,
-                                                        letterSpacing: 2.0,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'montapizza',
+                                                    fontSize: 30.0,
+                                                    letterSpacing: 2.0,
+                                                    fontWeight: FontWeight.bold,
+                                                    useGoogleFonts: false,
+                                                  ),
                                             ),
                                           ],
                                         ),
@@ -433,10 +434,11 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryBackground,
+                                                          useGoogleFonts: false,
                                                         ),
                                                   ),
                                                 ],
@@ -543,10 +545,11 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .accent4,
+                                                useGoogleFonts: false,
                                               ),
                                           alignLabelWithHint: false,
                                           hintText: 'Procurar Produto...',
@@ -554,11 +557,12 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                   context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryText,
                                                 fontWeight: FontWeight.normal,
+                                                useGoogleFonts: false,
                                               ),
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
@@ -606,11 +610,12 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               fontWeight: FontWeight.normal,
+                                              useGoogleFonts: false,
                                             ),
                                         validator: _model
                                             .searchControllerValidator
@@ -676,12 +681,13 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Open Sans',
+                                              fontFamily: 'montapizza',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 14.0,
                                               letterSpacing: 2.0,
+                                              useGoogleFonts: false,
                                             ),
                                       ),
                                     ),
@@ -691,11 +697,12 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Open Sans',
+                                          fontFamily: 'montapizza',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           fontSize: 12.0,
                                           letterSpacing: 2.0,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ],
@@ -1098,9 +1105,10 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Open Sans',
+                                                fontFamily: 'montapizza',
                                                 fontSize: 14.0,
                                                 letterSpacing: 1.0,
+                                                useGoogleFonts: false,
                                               ),
                                         ),
                                       ),
@@ -1141,30 +1149,30 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                               backgroundColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Open Sans',
-                                                        color: Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'montapizza',
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w500,
+                                                    useGoogleFonts: false,
+                                                  ),
                                               iconColor: Colors.white,
                                               iconSize: 15.0,
                                               elevation: 2.0,
                                             ),
                                             unselectedChipStyle: ChipStyle(
                                               backgroundColor: Colors.white,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall
-                                                      .override(
-                                                        fontFamily: 'Open Sans',
-                                                        color: Colors.black,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodySmall
+                                                  .override(
+                                                    fontFamily: 'montapizza',
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.w600,
+                                                    useGoogleFonts: false,
+                                                  ),
                                               iconColor: Colors.black,
                                               iconSize: 18.0,
                                               elevation: 0.0,
@@ -1212,11 +1220,12 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Open Sans',
+                                          fontFamily: 'montapizza',
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
                                           fontSize: 14.0,
                                           letterSpacing: 1.0,
+                                          useGoogleFonts: false,
                                         ),
                                   ),
                                 ),
@@ -1311,8 +1320,10 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
-                                                                fontSize: 18.0,
+                                                                    'montapizza',
+                                                                fontSize: 16.0,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -1346,14 +1357,16 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                fontSize: 16.0,
+                                                                fontSize: 14.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -1377,7 +1390,7 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                               .bodyMedium
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
@@ -1385,6 +1398,8 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .normal,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                         ),
                                                       ),
@@ -1443,9 +1458,9 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                       );
                                                     } else {
                                                       context.pushNamed(
-                                                        'Sabores',
+                                                        'produtoComposto',
                                                         queryParameters: {
-                                                          'paramProdutoComposto':
+                                                          'pizzaindex':
                                                               serializeParam(
                                                             columnProdutoRecord
                                                                 .reference,
@@ -1471,18 +1486,18 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Open Sans',
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .secondaryBackground,
-                                                              fontSize: 15.0,
-                                                            ),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'montapizza',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          fontSize: 14.0,
+                                                          useGoogleFonts: false,
+                                                        ),
                                                     elevation: 2.0,
                                                     borderSide: BorderSide(
                                                       color:

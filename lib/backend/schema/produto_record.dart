@@ -69,6 +69,16 @@ class ProdutoRecord extends FirestoreRecord {
   DocumentReference? get numeroSabor => _numeroSabor;
   bool hasNumeroSabor() => _numeroSabor != null;
 
+  // "adicionais" field.
+  List<DocumentReference>? _adicionais;
+  List<DocumentReference> get adicionais => _adicionais ?? const [];
+  bool hasAdicionais() => _adicionais != null;
+
+  // "borda" field.
+  DocumentReference? _borda;
+  DocumentReference? get borda => _borda;
+  bool hasBorda() => _borda != null;
+
   void _initializeFields() {
     _nome = snapshotData['nome'] as String?;
     _valor = castToType<double>(snapshotData['valor']);
@@ -80,6 +90,8 @@ class ProdutoRecord extends FirestoreRecord {
     _isComposto = snapshotData['isComposto'] as bool?;
     _sabor = snapshotData['sabor'] as String?;
     _numeroSabor = snapshotData['numeroSabor'] as DocumentReference?;
+    _adicionais = getDataList(snapshotData['adicionais']);
+    _borda = snapshotData['borda'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -132,6 +144,18 @@ class ProdutoRecord extends FirestoreRecord {
             ParamType.DocumentReference,
             false,
           ),
+          'adicionais': safeGet(
+            () => convertAlgoliaParam<DocumentReference>(
+              snapshot.data['adicionais'],
+              ParamType.DocumentReference,
+              true,
+            ).toList(),
+          ),
+          'borda': convertAlgoliaParam(
+            snapshot.data['borda'],
+            ParamType.DocumentReference,
+            false,
+          ),
         },
         ProdutoRecord.collection.doc(snapshot.objectID),
       );
@@ -178,6 +202,7 @@ Map<String, dynamic> createProdutoRecordData({
   bool? isComposto,
   String? sabor,
   DocumentReference? numeroSabor,
+  DocumentReference? borda,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -191,6 +216,7 @@ Map<String, dynamic> createProdutoRecordData({
       'isComposto': isComposto,
       'sabor': sabor,
       'numeroSabor': numeroSabor,
+      'borda': borda,
     }.withoutNulls,
   );
 
@@ -202,6 +228,7 @@ class ProdutoRecordDocumentEquality implements Equality<ProdutoRecord> {
 
   @override
   bool equals(ProdutoRecord? e1, ProdutoRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.nome == e2?.nome &&
         e1?.valor == e2?.valor &&
         e1?.descricao == e2?.descricao &&
@@ -211,7 +238,9 @@ class ProdutoRecordDocumentEquality implements Equality<ProdutoRecord> {
         e1?.isActive == e2?.isActive &&
         e1?.isComposto == e2?.isComposto &&
         e1?.sabor == e2?.sabor &&
-        e1?.numeroSabor == e2?.numeroSabor;
+        e1?.numeroSabor == e2?.numeroSabor &&
+        listEquality.equals(e1?.adicionais, e2?.adicionais) &&
+        e1?.borda == e2?.borda;
   }
 
   @override
@@ -225,7 +254,9 @@ class ProdutoRecordDocumentEquality implements Equality<ProdutoRecord> {
         e?.isActive,
         e?.isComposto,
         e?.sabor,
-        e?.numeroSabor
+        e?.numeroSabor,
+        e?.adicionais,
+        e?.borda
       ]);
 
   @override

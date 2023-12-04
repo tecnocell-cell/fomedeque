@@ -104,10 +104,11 @@ class _PagamentoConcluidoWidgetState extends State<PagamentoConcluidoWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Open Sans',
+                                    fontFamily: 'montapizza',
                                     fontSize: 30.0,
                                     letterSpacing: 1.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                             Text(
@@ -116,9 +117,10 @@ class _PagamentoConcluidoWidgetState extends State<PagamentoConcluidoWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Open Sans',
+                                    fontFamily: 'montapizza',
                                     fontSize: 28.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                             Text(
@@ -127,11 +129,12 @@ class _PagamentoConcluidoWidgetState extends State<PagamentoConcluidoWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Open Sans',
+                                    fontFamily: 'montapizza',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w300,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ].divide(SizedBox(height: 12.0)),
@@ -161,9 +164,10 @@ class _PagamentoConcluidoWidgetState extends State<PagamentoConcluidoWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Open Sans',
+                                    fontFamily: 'montapizza',
                                     color: Colors.white,
                                     fontSize: 20.0,
+                                    useGoogleFonts: false,
                                   ),
                               elevation: 3.0,
                               borderSide: BorderSide(
@@ -186,9 +190,10 @@ class _PagamentoConcluidoWidgetState extends State<PagamentoConcluidoWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Open Sans',
+                                    fontFamily: 'montapizza',
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.w500,
+                                    useGoogleFonts: false,
                                   ),
                             ),
                           ),

@@ -49,6 +49,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _taxaEntrega = prefs.getDouble('ff_taxaEntrega') ?? _taxaEntrega;
     });
+    _safeInit(() {
+      _PizzaIndex = prefs.getInt('ff_PizzaIndex') ?? _PizzaIndex;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -196,6 +199,31 @@ class FFAppState extends ChangeNotifier {
   set taxaEntrega(double _value) {
     _taxaEntrega = _value;
     prefs.setDouble('ff_taxaEntrega', _value);
+  }
+
+  bool _addToCarrinho = false;
+  bool get addToCarrinho => _addToCarrinho;
+  set addToCarrinho(bool _value) {
+    _addToCarrinho = _value;
+  }
+
+  int _PizzaIndex = 0;
+  int get PizzaIndex => _PizzaIndex;
+  set PizzaIndex(int _value) {
+    _PizzaIndex = _value;
+    prefs.setInt('ff_PizzaIndex', _value);
+  }
+
+  bool _OptionSedid = false;
+  bool get OptionSedid => _OptionSedid;
+  set OptionSedid(bool _value) {
+    _OptionSedid = _value;
+  }
+
+  bool _addFavorito = false;
+  bool get addFavorito => _addFavorito;
+  set addFavorito(bool _value) {
+    _addFavorito = _value;
   }
 }
 

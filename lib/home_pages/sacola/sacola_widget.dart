@@ -118,10 +118,11 @@ class _SacolaWidgetState extends State<SacolaWidget>
               title: Text(
                 'Minha sacola',
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Open Sans',
+                      fontFamily: 'montapizza',
                       color: Color(0xFF1C1C1C),
                       fontSize: 20.0,
                       fontWeight: FontWeight.w500,
+                      useGoogleFonts: false,
                     ),
               ),
               actions: [
@@ -144,10 +145,11 @@ class _SacolaWidgetState extends State<SacolaWidget>
                         'LIMPAR',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Open Sans',
+                              fontFamily: 'montapizza',
                               color: FlutterFlowTheme.of(context).primary,
                               fontSize: 18.0,
                               fontWeight: FontWeight.w500,
+                              useGoogleFonts: false,
                             ),
                       ),
                     ),
@@ -445,9 +447,11 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                                     .bodyMedium
                                                                     .override(
                                                                       fontFamily:
-                                                                          'Open Sans',
+                                                                          'montapizza',
                                                                       fontSize:
                                                                           18.0,
+                                                                      useGoogleFonts:
+                                                                          false,
                                                                     ),
                                                               );
                                                             },
@@ -476,7 +480,7 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                                 .bodyMedium
                                                                 .override(
                                                                   fontFamily:
-                                                                      'Open Sans',
+                                                                      'montapizza',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
@@ -485,6 +489,8 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
+                                                                  useGoogleFonts:
+                                                                      false,
                                                                 ),
                                                           ),
                                                         ),
@@ -714,15 +720,15 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                           children: [
                                             Text(
                                               'Taxa de entrega',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Open Sans',
-                                                        color:
-                                                            Color(0xFF363636),
-                                                        fontSize: 15.0,
-                                                      ),
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'montapizza',
+                                                    color: Color(0xFF363636),
+                                                    fontSize: 15.0,
+                                                    useGoogleFonts: false,
+                                                  ),
                                             ),
                                             Text(
                                               formatNumber(
@@ -736,8 +742,10 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         fontSize: 16.0,
+                                                        useGoogleFonts: false,
                                                       ),
                                             ),
                                           ],
@@ -825,10 +833,11 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           fontSize: 14.0,
                                                           fontWeight:
                                                               FontWeight.w300,
+                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                               Text(
@@ -844,8 +853,9 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           fontSize: 14.0,
+                                                          useGoogleFonts: false,
                                                         ),
                                               ),
                                             ],
@@ -889,10 +899,12 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                               .bodySmall
                                                               .override(
                                                                 fontFamily:
-                                                                    'Open Sans',
+                                                                    'montapizza',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
+                                                                useGoogleFonts:
+                                                                    false,
                                                               ),
                                                       enabledBorder:
                                                           OutlineInputBorder(
@@ -1096,13 +1108,15 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                           .of(context)
                                                       .titleSmall
                                                       .override(
-                                                        fontFamily: 'Open Sans',
+                                                        fontFamily:
+                                                            'montapizza',
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.bold,
+                                                        useGoogleFonts: false,
                                                       ),
                                                   borderSide: BorderSide(
                                                     color: FlutterFlowTheme.of(
@@ -1154,8 +1168,9 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                         .titleSmall
                                                         .override(
                                                           fontFamily:
-                                                              'Open Sans',
+                                                              'montapizza',
                                                           color: Colors.white,
+                                                          useGoogleFonts: false,
                                                         ),
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
@@ -1451,8 +1466,9 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                               FlutterFlowTheme.of(context)
                                                   .titleSmall
                                                   .override(
-                                                    fontFamily: 'Open Sans',
+                                                    fontFamily: 'montapizza',
                                                     color: Colors.white,
+                                                    useGoogleFonts: false,
                                                   ),
                                           elevation: 3.0,
                                           borderSide: BorderSide(
