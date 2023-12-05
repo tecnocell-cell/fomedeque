@@ -479,7 +479,7 @@ class _RestaurantesWidgetState extends State<RestaurantesWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: Image.asset(
-                                            'assets/images/acai.png',
+                                            'assets/images/vnimc_1.png',
                                             width: 300.0,
                                             height: 200.0,
                                             fit: BoxFit.cover,
@@ -489,7 +489,7 @@ class _RestaurantesWidgetState extends State<RestaurantesWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: Image.asset(
-                                            'assets/images/executivos.jpeg',
+                                            'assets/images/49svh_2.png',
                                             width: 300.0,
                                             height: 200.0,
                                             fit: BoxFit.cover,
@@ -499,7 +499,7 @@ class _RestaurantesWidgetState extends State<RestaurantesWidget>
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: Image.asset(
-                                            'assets/images/bebidas.jpeg',
+                                            'assets/images/3a9k2_3.png',
                                             width: 300.0,
                                             height: 200.0,
                                             fit: BoxFit.cover,

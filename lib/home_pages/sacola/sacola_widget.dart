@@ -516,7 +516,6 @@ class _SacolaWidgetState extends State<SacolaWidget>
                                                       borderColor:
                                                           Colors.transparent,
                                                       borderWidth: 1.0,
-                                                      buttonSize: 48.0,
                                                       icon: Icon(
                                                         Icons
                                                             .restore_from_trash_rounded,
