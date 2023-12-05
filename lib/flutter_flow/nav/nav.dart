@@ -204,24 +204,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'config')
                   : ConfigWidget(),
-            ),
-            FFRoute(
-              name: 'produtoComposto',
-              path: 'produtoComposto',
-              requireAuth: true,
-              builder: (context, params) => ProdutoCompostoWidget(
-                pizzaindex: params.getParam('pizzaindex',
-                    ParamType.DocumentReference, false, ['produto']),
-              ),
-            ),
-            FFRoute(
-              name: 'detalhesProdutoComposto',
-              path: 'detalhesProdutoComposto',
-              requireAuth: true,
-              builder: (context, params) => DetalhesProdutoCompostoWidget(
-                parametroProduto: params.getParam('parametroProduto',
-                    ParamType.DocumentReference, false, ['produto']),
-              ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
