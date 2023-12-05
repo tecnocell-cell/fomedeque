@@ -175,7 +175,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'detalhesProduto',
-              path: 'produto',
+              path: 'detalhesProduto',
               requireAuth: true,
               builder: (context, params) => DetalhesProdutoWidget(
                 parametroProduto: params.getParam('parametroProduto',
@@ -211,6 +211,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               requireAuth: true,
               builder: (context, params) => ProdutoCompostoWidget(
                 pizzaindex: params.getParam('pizzaindex',
+                    ParamType.DocumentReference, false, ['produto']),
+              ),
+            ),
+            FFRoute(
+              name: 'detalhesProdutoComposto',
+              path: 'detalhesProdutoComposto',
+              requireAuth: true,
+              builder: (context, params) => DetalhesProdutoCompostoWidget(
+                parametroProduto: params.getParam('parametroProduto',
                     ParamType.DocumentReference, false, ['produto']),
               ),
             )

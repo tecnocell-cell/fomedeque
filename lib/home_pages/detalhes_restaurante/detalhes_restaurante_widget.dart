@@ -1458,9 +1458,9 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                       );
                                                     } else {
                                                       context.pushNamed(
-                                                        'produtoComposto',
+                                                        'detalhesProdutoComposto',
                                                         queryParameters: {
-                                                          'pizzaindex':
+                                                          'parametroProduto':
                                                               serializeParam(
                                                             columnProdutoRecord
                                                                 .reference,

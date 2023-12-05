@@ -698,7 +698,7 @@ class _ProdutoCompostoWidgetState extends State<ProdutoCompostoWidget>
                               0.0, 0.0, 0.0, 100.0),
                           child: Container(
                             width: 280.0,
-                            height: 548.0,
+                            height: 600.0,
                             decoration: BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
@@ -1132,7 +1132,6 @@ class _ProdutoCompostoWidgetState extends State<ProdutoCompostoWidget>
                                                       .override(
                                                         fontFamily:
                                                             'montapizza',
-                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                         useGoogleFonts: false,

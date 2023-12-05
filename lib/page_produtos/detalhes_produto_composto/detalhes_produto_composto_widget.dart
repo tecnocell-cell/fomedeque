@@ -17,11 +17,11 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'detalhes_produto_model.dart';
-export 'detalhes_produto_model.dart';
+import 'detalhes_produto_composto_model.dart';
+export 'detalhes_produto_composto_model.dart';
 
-class DetalhesProdutoWidget extends StatefulWidget {
-  const DetalhesProdutoWidget({
+class DetalhesProdutoCompostoWidget extends StatefulWidget {
+  const DetalhesProdutoCompostoWidget({
     Key? key,
     this.parametroProduto,
   }) : super(key: key);
@@ -29,12 +29,13 @@ class DetalhesProdutoWidget extends StatefulWidget {
   final DocumentReference? parametroProduto;
 
   @override
-  _DetalhesProdutoWidgetState createState() => _DetalhesProdutoWidgetState();
+  _DetalhesProdutoCompostoWidgetState createState() =>
+      _DetalhesProdutoCompostoWidgetState();
 }
 
-class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
-    with TickerProviderStateMixin {
-  late DetalhesProdutoModel _model;
+class _DetalhesProdutoCompostoWidgetState
+    extends State<DetalhesProdutoCompostoWidget> with TickerProviderStateMixin {
+  late DetalhesProdutoCompostoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -68,6 +69,26 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
           delay: 500.ms,
           duration: 400.ms,
           begin: Offset(2.0, 2.0),
+          end: Offset(1.0, 1.0),
+        ),
+      ],
+    ),
+    'blurOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        ShakeEffect(
+          curve: Curves.easeInOut,
+          delay: 80.ms,
+          duration: 1000.ms,
+          hz: 5,
+          offset: Offset(0.0, 0.0),
+          rotation: 0.105,
+        ),
+        ScaleEffect(
+          curve: Curves.easeInOut,
+          delay: 80.ms,
+          duration: 1000.ms,
+          begin: Offset(0.0, 0.0),
           end: Offset(1.0, 1.0),
         ),
       ],
@@ -341,7 +362,7 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => DetalhesProdutoModel());
+    _model = createModel(context, () => DetalhesProdutoCompostoModel());
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
@@ -389,9 +410,9 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
             ),
           );
         }
-        final detalhesProdutoProdutoRecord = snapshot.data!;
+        final detalhesProdutoCompostoProdutoRecord = snapshot.data!;
         return Title(
-            title: 'detalhesProduto',
+            title: 'detalhesProdutoComposto',
             color: FlutterFlowTheme.of(context).primary.withAlpha(0XFF),
             child: GestureDetector(
               onTap: () => _model.unfocusNode.canRequestFocus
@@ -424,7 +445,8 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                   ClipRRect(
                                     borderRadius: BorderRadius.circular(25.0),
                                     child: Image.network(
-                                      detalhesProdutoProdutoRecord.imagem,
+                                      detalhesProdutoCompostoProdutoRecord
+                                          .imagem,
                                       width: double.infinity,
                                       height: 300.0,
                                       fit: BoxFit.cover,
@@ -559,6 +581,54 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                       ],
                                     ),
                                   ),
+                                  Align(
+                                    alignment: AlignmentDirectional(0.00, 1.00),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(30.0),
+                                      child: BackdropFilter(
+                                        filter: ImageFilter.blur(
+                                          sigmaX: 2.0,
+                                          sigmaY: 2.0,
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 80.0),
+                                          child: Container(
+                                            width: 250.0,
+                                            height: 60.0,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xA79B1814),
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  detalhesProdutoCompostoProdutoRecord
+                                                      .nome
+                                                      .maybeHandleOverflow(
+                                                    maxChars: 20,
+                                                    replacement: '…',
+                                                  ),
+                                                  style: GoogleFonts.getFont(
+                                                    'Roboto Mono',
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 14.0,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ).animateOnPageLoad(animationsMap[
+                                        'blurOnPageLoadAnimation']!),
+                                  ),
                                 ],
                               ),
                             ).animateOnPageLoad(animationsMap[
@@ -585,7 +655,8 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          detalhesProdutoProdutoRecord.nome,
+                                          detalhesProdutoCompostoProdutoRecord
+                                              .nome,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -602,7 +673,8 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                       children: [
                                         Text(
                                           formatNumber(
-                                            detalhesProdutoProdutoRecord.valor,
+                                            detalhesProdutoCompostoProdutoRecord
+                                                .valor,
                                             formatType: FormatType.custom,
                                             currency: 'R\$ ',
                                             format: '.00',
@@ -690,7 +762,7 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                       children: [
                                         Expanded(
                                           child: Text(
-                                            detalhesProdutoProdutoRecord
+                                            detalhesProdutoCompostoProdutoRecord
                                                 .descricao
                                                 .maybeHandleOverflow(
                                               maxChars: 100,
@@ -934,7 +1006,7 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                     'countControllerOnPageLoadAnimation']!),
                                 StreamBuilder<RestauranteRecord>(
                                   stream: RestauranteRecord.getDocument(
-                                      detalhesProdutoProdutoRecord
+                                      detalhesProdutoCompostoProdutoRecord
                                           .restaurante!),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -965,13 +1037,13 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                             ProdutoVendaRecord.collection.doc();
                                         await produtoVendaRecordReference
                                             .set(createProdutoVendaRecordData(
-                                          valorSubtotal:
-                                              functions.subtotalProduto(
-                                                  detalhesProdutoProdutoRecord
-                                                      .valor,
-                                                  _model.countControllerValue!),
-                                          produto: detalhesProdutoProdutoRecord
-                                              .reference,
+                                          valorSubtotal: functions.subtotalProduto(
+                                              detalhesProdutoCompostoProdutoRecord
+                                                  .valor,
+                                              _model.countControllerValue!),
+                                          produto:
+                                              detalhesProdutoCompostoProdutoRecord
+                                                  .reference,
                                           quantidade:
                                               _model.countControllerValue,
                                           usuario: currentUserReference,
@@ -989,12 +1061,12 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                                 createProdutoVendaRecordData(
                                                   valorSubtotal:
                                                       functions.subtotalProduto(
-                                                          detalhesProdutoProdutoRecord
+                                                          detalhesProdutoCompostoProdutoRecord
                                                               .valor,
                                                           _model
                                                               .countControllerValue!),
                                                   produto:
-                                                      detalhesProdutoProdutoRecord
+                                                      detalhesProdutoCompostoProdutoRecord
                                                           .reference,
                                                   quantidade: _model
                                                       .countControllerValue,
@@ -1061,7 +1133,7 @@ class _DetalhesProdutoWidgetState extends State<DetalhesProdutoWidget>
                                             Text(
                                               formatNumber(
                                                 functions.subtotalProduto(
-                                                    detalhesProdutoProdutoRecord
+                                                    detalhesProdutoCompostoProdutoRecord
                                                         .valor,
                                                     _model
                                                         .countControllerValue!),
