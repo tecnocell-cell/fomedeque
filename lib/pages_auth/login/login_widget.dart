@@ -160,7 +160,7 @@ class _LoginWidgetState extends State<LoginWidget>
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16.0),
                                 child: Image.asset(
-                                  'assets/images/Mesa_Ocupda.png',
+                                  'assets/images/Orange_and_Red_Modern_Spicy_Sauce_Logo.png',
                                   width: 150.0,
                                   height: 150.0,
                                   fit: BoxFit.cover,

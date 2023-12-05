@@ -13,7 +13,6 @@ export '/pages_auth/cadastrar_endereco/cadastrar_endereco_widget.dart'
 export '/pages_dados/pagamento/pagamento_widget.dart' show PagamentoWidget;
 export '/pages_dados/pagamento_concluido/pagamento_concluido_widget.dart'
     show PagamentoConcluidoWidget;
-export '/home_pages/pesquisa/pesquisa_widget.dart' show PesquisaWidget;
 export '/pages_dados/pedidos/pedidos_widget.dart' show PedidosWidget;
 export '/page_produtos/detalhes_produto/detalhes_produto_widget.dart'
     show DetalhesProdutoWidget;

@@ -109,7 +109,7 @@ class _ConfigWidgetState extends State<ConfigWidget>
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(27.0),
                                   child: Image.asset(
-                                    'assets/images/carinha_bem_vindo.png',
+                                    'assets/images/20201109_160716.jpg',
                                     width: 64.0,
                                     height: 64.0,
                                     fit: BoxFit.cover,

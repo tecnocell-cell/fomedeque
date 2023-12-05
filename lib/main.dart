@@ -137,7 +137,6 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Restaurantes': RestaurantesWidget(),
       'sacola': SacolaWidget(),
-      'pesquisa': PesquisaWidget(),
       'pedidos': PedidosWidget(),
       'config': ConfigWidget(),
     };
@@ -173,11 +172,6 @@ class _NavBarPageState extends State<NavBarPage> {
             text: 'Sacola',
             iconSize: 24.0,
             backgroundColor: FlutterFlowTheme.of(context).primary,
-          ),
-          GButton(
-            icon: Icons.search_sharp,
-            text: 'Pesquisar',
-            iconSize: 20.0,
           ),
           GButton(
             icon: FontAwesomeIcons.clipboardList,

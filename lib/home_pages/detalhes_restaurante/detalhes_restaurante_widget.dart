@@ -247,7 +247,7 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.asset(
-                                      'assets/images/empresas.png',
+                                      'assets/images/pocoes.png',
                                       width: 300.0,
                                       height: 200.0,
                                       fit: BoxFit.contain,
@@ -1458,9 +1458,9 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                       );
                                                     } else {
                                                       context.pushNamed(
-                                                        'detalhesProdutoComposto',
+                                                        'produtoComposto',
                                                         queryParameters: {
-                                                          'parametroProduto':
+                                                          'pizzaindex':
                                                               serializeParam(
                                                             columnProdutoRecord
                                                                 .reference,

@@ -158,14 +158,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => PagamentoConcluidoWidget(),
             ),
             FFRoute(
-              name: 'pesquisa',
-              path: 'pesquisa',
-              requireAuth: true,
-              builder: (context, params) => params.isEmpty
-                  ? NavBarPage(initialPage: 'pesquisa')
-                  : PesquisaWidget(),
-            ),
-            FFRoute(
               name: 'pedidos',
               path: 'pedidos',
               requireAuth: true,

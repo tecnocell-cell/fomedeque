@@ -39,11 +39,6 @@ class ProdutoRecord extends FirestoreRecord {
   String get imagem => _imagem ?? '';
   bool hasImagem() => _imagem != null;
 
-  // "categoria" field.
-  DocumentReference? _categoria;
-  DocumentReference? get categoria => _categoria;
-  bool hasCategoria() => _categoria != null;
-
   // "restaurante" field.
   DocumentReference? _restaurante;
   DocumentReference? get restaurante => _restaurante;
@@ -69,29 +64,22 @@ class ProdutoRecord extends FirestoreRecord {
   DocumentReference? get numeroSabor => _numeroSabor;
   bool hasNumeroSabor() => _numeroSabor != null;
 
-  // "adicionais" field.
-  List<DocumentReference>? _adicionais;
-  List<DocumentReference> get adicionais => _adicionais ?? const [];
-  bool hasAdicionais() => _adicionais != null;
-
-  // "borda" field.
-  DocumentReference? _borda;
-  DocumentReference? get borda => _borda;
-  bool hasBorda() => _borda != null;
+  // "categoria" field.
+  List<String>? _categoria;
+  List<String> get categoria => _categoria ?? const [];
+  bool hasCategoria() => _categoria != null;
 
   void _initializeFields() {
     _nome = snapshotData['nome'] as String?;
     _valor = castToType<double>(snapshotData['valor']);
     _descricao = snapshotData['descricao'] as String?;
     _imagem = snapshotData['imagem'] as String?;
-    _categoria = snapshotData['categoria'] as DocumentReference?;
     _restaurante = snapshotData['restaurante'] as DocumentReference?;
     _isActive = snapshotData['isActive'] as bool?;
     _isComposto = snapshotData['isComposto'] as bool?;
     _sabor = snapshotData['sabor'] as String?;
     _numeroSabor = snapshotData['numeroSabor'] as DocumentReference?;
-    _adicionais = getDataList(snapshotData['adicionais']);
-    _borda = snapshotData['borda'] as DocumentReference?;
+    _categoria = getDataList(snapshotData['categoria']);
   }
 
   static CollectionReference get collection =>
@@ -126,11 +114,6 @@ class ProdutoRecord extends FirestoreRecord {
           ),
           'descricao': snapshot.data['descricao'],
           'imagem': snapshot.data['imagem'],
-          'categoria': convertAlgoliaParam(
-            snapshot.data['categoria'],
-            ParamType.DocumentReference,
-            false,
-          ),
           'restaurante': convertAlgoliaParam(
             snapshot.data['restaurante'],
             ParamType.DocumentReference,
@@ -144,17 +127,8 @@ class ProdutoRecord extends FirestoreRecord {
             ParamType.DocumentReference,
             false,
           ),
-          'adicionais': safeGet(
-            () => convertAlgoliaParam<DocumentReference>(
-              snapshot.data['adicionais'],
-              ParamType.DocumentReference,
-              true,
-            ).toList(),
-          ),
-          'borda': convertAlgoliaParam(
-            snapshot.data['borda'],
-            ParamType.DocumentReference,
-            false,
+          'categoria': safeGet(
+            () => snapshot.data['categoria'].toList(),
           ),
         },
         ProdutoRecord.collection.doc(snapshot.objectID),
@@ -196,13 +170,11 @@ Map<String, dynamic> createProdutoRecordData({
   double? valor,
   String? descricao,
   String? imagem,
-  DocumentReference? categoria,
   DocumentReference? restaurante,
   bool? isActive,
   bool? isComposto,
   String? sabor,
   DocumentReference? numeroSabor,
-  DocumentReference? borda,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -210,13 +182,11 @@ Map<String, dynamic> createProdutoRecordData({
       'valor': valor,
       'descricao': descricao,
       'imagem': imagem,
-      'categoria': categoria,
       'restaurante': restaurante,
       'isActive': isActive,
       'isComposto': isComposto,
       'sabor': sabor,
       'numeroSabor': numeroSabor,
-      'borda': borda,
     }.withoutNulls,
   );
 
@@ -233,14 +203,12 @@ class ProdutoRecordDocumentEquality implements Equality<ProdutoRecord> {
         e1?.valor == e2?.valor &&
         e1?.descricao == e2?.descricao &&
         e1?.imagem == e2?.imagem &&
-        e1?.categoria == e2?.categoria &&
         e1?.restaurante == e2?.restaurante &&
         e1?.isActive == e2?.isActive &&
         e1?.isComposto == e2?.isComposto &&
         e1?.sabor == e2?.sabor &&
         e1?.numeroSabor == e2?.numeroSabor &&
-        listEquality.equals(e1?.adicionais, e2?.adicionais) &&
-        e1?.borda == e2?.borda;
+        listEquality.equals(e1?.categoria, e2?.categoria);
   }
 
   @override
@@ -249,14 +217,12 @@ class ProdutoRecordDocumentEquality implements Equality<ProdutoRecord> {
         e?.valor,
         e?.descricao,
         e?.imagem,
-        e?.categoria,
         e?.restaurante,
         e?.isActive,
         e?.isComposto,
         e?.sabor,
         e?.numeroSabor,
-        e?.adicionais,
-        e?.borda
+        e?.categoria
       ]);
 
   @override
