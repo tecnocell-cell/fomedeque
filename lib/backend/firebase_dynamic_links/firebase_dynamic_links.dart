@@ -4,7 +4,7 @@ import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 
-const _kDynamicLinksUrl = 'https://delivery';
+const _kDynamicLinksUrl = 'https://deliverycliente.com';
 const _kAppBundleId = 'com.flutterflow.delivery';
 
 Future<String> generateCurrentPageLink(
