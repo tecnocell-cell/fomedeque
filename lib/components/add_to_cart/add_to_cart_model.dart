@@ -4,7 +4,6 @@ import 'add_to_cart_widget.dart' show AddToCartWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class AddToCartModel extends FlutterFlowModel<AddToCartWidget> {

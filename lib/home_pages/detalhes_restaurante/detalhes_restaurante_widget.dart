@@ -247,7 +247,7 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8.0),
                                     child: Image.asset(
-                                      'assets/images/pocoes.png',
+                                      'assets/images/empresas.png',
                                       width: 300.0,
                                       height: 200.0,
                                       fit: BoxFit.contain,

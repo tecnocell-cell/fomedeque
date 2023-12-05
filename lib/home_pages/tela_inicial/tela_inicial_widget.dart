@@ -127,7 +127,7 @@ class _TelaInicialWidgetState extends State<TelaInicialWidget>
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: Image.asset(
-                              'assets/images/pranjall-kumar-sejqj6Eaqe8-unsplash.jpg',
+                              'assets/images/pranjall-kumar-sejqj6Eaqe8-unsplash_(2).jpg',
                             ).image,
                           ),
                         ),

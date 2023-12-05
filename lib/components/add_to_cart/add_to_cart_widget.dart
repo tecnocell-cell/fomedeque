@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'add_to_cart_model.dart';
 export 'add_to_cart_model.dart';
@@ -47,14 +46,6 @@ class _AddToCartWidgetState extends State<AddToCartWidget> {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Lottie.asset(
-          'assets/lottie_animations/41147-pizza-loading-icon.json',
-          width: 150.0,
-          height: 130.0,
-          fit: BoxFit.cover,
-          repeat: false,
-          animate: true,
-        ),
         Align(
           alignment: AlignmentDirectional(0.00, 0.00),
           child: Padding(
