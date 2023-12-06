@@ -120,6 +120,25 @@ class _RestaurantesWidgetState extends State<RestaurantesWidget>
     super.initState();
     _model = createModel(context, () => RestaurantesModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      while (true) {
+        await Future.delayed(const Duration(milliseconds: 3000));
+        if (_model.pageViewCurrentIndex == 2) {
+          await _model.pageViewController?.animateToPage(
+            0,
+            duration: Duration(milliseconds: 500),
+            curve: Curves.ease,
+          );
+        } else {
+          await _model.pageViewController?.nextPage(
+            duration: Duration(milliseconds: 300),
+            curve: Curves.ease,
+          );
+        }
+      }
+    });
+
     _model.searchController ??= TextEditingController();
     _model.searchFocusNode ??= FocusNode();
 

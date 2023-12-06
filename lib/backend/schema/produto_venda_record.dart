@@ -46,6 +46,16 @@ class ProdutoVendaRecord extends FirestoreRecord {
   PagamentoStruct get pagamento => _pagamento ?? PagamentoStruct();
   bool hasPagamento() => _pagamento != null;
 
+  // "adicional" field.
+  List<DocumentReference>? _adicional;
+  List<DocumentReference> get adicional => _adicional ?? const [];
+  bool hasAdicional() => _adicional != null;
+
+  // "borda" field.
+  DocumentReference? _borda;
+  DocumentReference? get borda => _borda;
+  bool hasBorda() => _borda != null;
+
   void _initializeFields() {
     _valorSubtotal = castToType<double>(snapshotData['valorSubtotal']);
     _produto = snapshotData['produto'] as DocumentReference?;
@@ -53,6 +63,8 @@ class ProdutoVendaRecord extends FirestoreRecord {
     _usuario = snapshotData['usuario'] as DocumentReference?;
     _restaurante = snapshotData['restaurante'] as DocumentReference?;
     _pagamento = PagamentoStruct.maybeFromMap(snapshotData['pagamento']);
+    _adicional = getDataList(snapshotData['adicional']);
+    _borda = snapshotData['borda'] as DocumentReference?;
   }
 
   static CollectionReference get collection =>
@@ -96,6 +108,7 @@ Map<String, dynamic> createProdutoVendaRecordData({
   DocumentReference? usuario,
   DocumentReference? restaurante,
   PagamentoStruct? pagamento,
+  DocumentReference? borda,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -105,6 +118,7 @@ Map<String, dynamic> createProdutoVendaRecordData({
       'usuario': usuario,
       'restaurante': restaurante,
       'pagamento': PagamentoStruct().toMap(),
+      'borda': borda,
     }.withoutNulls,
   );
 
@@ -120,12 +134,15 @@ class ProdutoVendaRecordDocumentEquality
 
   @override
   bool equals(ProdutoVendaRecord? e1, ProdutoVendaRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.valorSubtotal == e2?.valorSubtotal &&
         e1?.produto == e2?.produto &&
         e1?.quantidade == e2?.quantidade &&
         e1?.usuario == e2?.usuario &&
         e1?.restaurante == e2?.restaurante &&
-        e1?.pagamento == e2?.pagamento;
+        e1?.pagamento == e2?.pagamento &&
+        listEquality.equals(e1?.adicional, e2?.adicional) &&
+        e1?.borda == e2?.borda;
   }
 
   @override
@@ -135,7 +152,9 @@ class ProdutoVendaRecordDocumentEquality
         e?.quantidade,
         e?.usuario,
         e?.restaurante,
-        e?.pagamento
+        e?.pagamento,
+        e?.adicional,
+        e?.borda
       ]);
 
   @override

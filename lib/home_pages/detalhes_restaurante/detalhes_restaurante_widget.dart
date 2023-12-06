@@ -1133,11 +1133,11 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                             options: [
                                               ChipData(
                                                   'Todas', Icons.local_pizza),
-                                              ChipData('Massas',
+                                              ChipData('Pizzas',
                                                   Icons.local_pizza_sharp),
                                               ChipData('Fast Food',
                                                   Icons.fastfood_sharp),
-                                              ChipData('Hamburguer',
+                                              ChipData('Hamburguers',
                                                   Icons.fastfood_sharp),
                                               ChipData('Bebidas',
                                                   Icons.local_drink_sharp)
@@ -1239,11 +1239,15 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                             12.0, 12.0, 12.0, 12.0),
                         child: StreamBuilder<List<ProdutoRecord>>(
                           stream: queryProdutoRecord(
-                            queryBuilder: (produtoRecord) =>
-                                produtoRecord.where(
-                              'restaurante',
-                              isEqualTo: widget.restauranteDetalhe,
-                            ),
+                            queryBuilder: (produtoRecord) => produtoRecord
+                                .where(
+                                  'restaurante',
+                                  isEqualTo: widget.restauranteDetalhe,
+                                )
+                                .where(
+                                  'categoria',
+                                  arrayContains: _model.filtroCategoriaValue,
+                                ),
                           ),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
@@ -1458,9 +1462,9 @@ class _DetalhesRestauranteWidgetState extends State<DetalhesRestauranteWidget>
                                                       );
                                                     } else {
                                                       context.pushNamed(
-                                                        'produtoComposto',
+                                                        'detalhesProdutoComposto',
                                                         queryParameters: {
-                                                          'pizzaindex':
+                                                          'parametroProduto':
                                                               serializeParam(
                                                             columnProdutoRecord
                                                                 .reference,

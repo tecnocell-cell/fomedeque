@@ -1,6 +1,20 @@
 {
   "indexes": [
     {
+      "collectionGroup": "produto",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "restaurante",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "categoria",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
       "collectionGroup": "venda",
       "queryScope": "COLLECTION",
       "fields": [
